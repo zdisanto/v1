@@ -1,0 +1,208 @@
+<html>
+<head>
+<title>Chromesthesia.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #808080; font-style: italic;}
+.s3 { color: #008000; font-weight: bold;}
+.s4 { color: #0000ff;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Chromesthesia.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>chromesthesia2;
+
+<span class="s0">import </span>java.util.Scanner;
+<span class="s0">import </span>javax.swing.JOptionPane;
+<span class="s0">import </span>javax.swing.SwingUtilities;
+<span class="s0">import </span>painter.SPainter;
+
+<span class="s0">public class </span>Chromesthesia {
+    <span class="s0">public static void </span>main(String[] args) {
+        SwingUtilities.invokeLater(<span class="s0">new </span>chromesthesia2.Chromesthesia.ThreadForGUI());
+
+    }
+
+    <span class="s0">private static class </span>ThreadForGUI <span class="s0">implements </span>Runnable {
+        @Override
+
+        <span class="s0">public void </span>run() {
+            <span class="s0">new </span>chromesthesia2.Chromesthesia();
+
+        }
+
+    }
+
+    <span class="s0">public </span>Chromesthesia() {
+        interpreter();
+
+    }
+    <span class="s2">// FEATURED VARIABLES</span>
+
+    <span class="s0">private static </span>SPainter miro;
+    <span class="s0">private static </span>chromesthesia2.Pitch[] pitches;
+
+    <span class="s2">// THE INTERPRETER</span>
+    <span class="s0">public static void </span>interpreter() {
+
+        initialization(); <span class="s2">// miro and pitches</span>
+
+        <span class="s0">while </span>( <span class="s0">true </span>) {
+            String input = getInput();
+
+            <span class="s0">if </span>(input.equalsIgnoreCase(<span class="s3">&quot;EXIT&quot;</span>)) {
+                <span class="s0">break</span>;
+
+            } <span class="s0">else </span>{
+                <span class="s0">try </span>{
+                    playMelody(input, pitches);
+                } <span class="s0">catch </span>(Exception ex) {
+                    showErrorMessage(ex.toString());
+                }
+            }
+        }
+        cleanup(); <span class="s2">// miro has to go</span>
+    }
+
+<span class="s2">// METHODS PERTAINING TO THE CHROMESTHETIC PITCHES</span>
+
+    <span class="s0">private static </span>chromesthesia2.Pitch[] establishPitches(SPainter painter) {
+        chromesthesia2.Pitch[] pitches = <span class="s0">new </span>chromesthesia2.Pitch[<span class="s4">21</span>];
+
+        chromesthesia2.Pitch pitchMiddleC = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;C&quot;</span>,painter);
+        pitches[<span class="s4">0</span>] = pitchMiddleC;
+        chromesthesia2.Pitch pitchLowC = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;C,&quot;</span>,painter);
+        pitches[<span class="s4">1</span>] = pitchLowC;
+        chromesthesia2.Pitch pitchHighC = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;c&quot;</span>,painter);
+        pitches[<span class="s4">2</span>] = pitchHighC;
+
+        chromesthesia2.Pitch pitchMiddleD = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;D&quot;</span>,painter);
+        pitches[<span class="s4">3</span>] = pitchMiddleD;
+        chromesthesia2.Pitch pitchLowD = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;D,&quot;</span>,painter);
+        pitches[<span class="s4">4</span>] = pitchLowD;
+        chromesthesia2.Pitch pitchHighD = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;d&quot;</span>,painter);
+        pitches[<span class="s4">5</span>] = pitchHighD;
+
+        chromesthesia2.Pitch pitchMiddleE = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;E&quot;</span>,painter);
+        pitches[<span class="s4">6</span>] = pitchMiddleE;
+        chromesthesia2.Pitch pitchLowE = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;E,&quot;</span>,painter);
+        pitches[<span class="s4">7</span>] = pitchLowE;
+        chromesthesia2.Pitch pitchHighE = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;e&quot;</span>,painter);
+        pitches[<span class="s4">8</span>] = pitchHighE;
+
+        chromesthesia2.Pitch pitchMiddleF = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;F&quot;</span>,painter);
+        pitches[<span class="s4">9</span>] = pitchMiddleF;
+        chromesthesia2.Pitch pitchLowF = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;F,&quot;</span>,painter);
+        pitches[<span class="s4">10</span>] = pitchLowF;
+        chromesthesia2.Pitch pitchHighF = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;f&quot;</span>,painter);
+        pitches[<span class="s4">11</span>] = pitchHighF;
+
+        chromesthesia2.Pitch pitchMiddleG = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;G&quot;</span>,painter);
+        pitches[<span class="s4">12</span>] = pitchMiddleG;
+        chromesthesia2.Pitch pitchLowG = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;G,&quot;</span>,painter);
+        pitches[<span class="s4">13</span>] = pitchLowG;
+        chromesthesia2.Pitch pitchHighG = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;g&quot;</span>,painter);
+        pitches[<span class="s4">14</span>] = pitchHighG;
+
+        chromesthesia2.Pitch pitchMiddleA = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;A&quot;</span>,painter);
+        pitches[<span class="s4">15</span>] = pitchMiddleA;
+        chromesthesia2.Pitch pitchLowA = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;A,&quot;</span>,painter);
+        pitches[<span class="s4">16</span>] = pitchLowA;
+        chromesthesia2.Pitch pitchHighA = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;a&quot;</span>,painter);
+        pitches[<span class="s4">17</span>] = pitchHighA;
+
+        chromesthesia2.Pitch pitchMiddleB = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;B&quot;</span>,painter);
+        pitches[<span class="s4">18</span>] = pitchMiddleB;
+        chromesthesia2.Pitch pitchLowB = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;B,&quot;</span>,painter);
+        pitches[<span class="s4">19</span>] = pitchLowB;
+        chromesthesia2.Pitch pitchHighB = <span class="s0">new </span>chromesthesia2.Pitch(<span class="s3">&quot;b&quot;</span>,painter);
+        pitches[<span class="s4">20</span>] = pitchHighB;
+
+        <span class="s0">return </span>pitches;
+    }
+
+    <span class="s0">private static </span>chromesthesia2.Pitch find(String token, chromesthesia2.Pitch[] pitches) <span class="s0">throws </span>Exception {
+        <span class="s0">for </span>( <span class="s0">int </span>i = <span class="s4">0</span>; i &lt; pitches.length; i = i + <span class="s4">1 </span>) {
+
+            chromesthesia2.Pitch pitch = pitches[i];
+            <span class="s0">if </span>( pitch.abcName().equals(token) ) {
+
+                <span class="s0">return </span>pitch;
+            }
+
+        }
+
+        <span class="s0">throw new </span>Exception(<span class="s3">&quot;### PITCH &quot; </span>+ token + <span class="s3">&quot; NOT FOUND&quot;</span>);
+    }
+
+    <span class="s0">private static void </span>display(chromesthesia2.Pitch[] pitches) {
+        <span class="s0">for </span>( <span class="s0">int </span>i = <span class="s4">0</span>; i &lt; pitches.length; i = i + <span class="s4">1 </span>) {
+
+            System.out.println(pitches[i].toString());
+        }
+
+    }
+
+    <span class="s0">private static void </span>playMelody(String input, Pitch[] pitches) <span class="s0">throws </span>Exception {
+        Scanner scanner = <span class="s0">new </span>Scanner(input);
+        <span class="s0">while </span>( scanner.hasNext() ) {
+            String token = scanner.next();
+            String pitchName;
+            String duration = <span class="s3">&quot;&quot;</span>;
+            <span class="s0">if </span>( token.indexOf(<span class="s3">&quot;,&quot;</span>) &lt; <span class="s4">0 </span>) {
+                pitchName = token.substring(<span class="s4">0</span>,<span class="s4">1</span>);
+                duration = token.substring(<span class="s4">1</span>);
+            } <span class="s0">else </span>{
+                pitchName = token.substring(<span class="s4">0</span>,<span class="s4">2</span>);
+                duration = token.substring(<span class="s4">2</span>);
+            }
+            <span class="s0">if </span>( duration.length() == <span class="s4">0 </span>) { duration = <span class="s3">&quot;1&quot;</span>; }
+            Pitch pitch = find(pitchName,pitches);
+            pitch.play(duration);
+        }
+    }
+
+    <span class="s2">// INITIALIZATION, CLEANUP, GETTING INPUT, ERROR MESSAGING</span>
+
+    <span class="s0">static private void </span>showErrorMessage(String message) {
+        miro.setVisible(<span class="s0">false</span>);
+        JOptionPane.showMessageDialog(<span class="s0">null</span>, message);
+
+    }
+
+    <span class="s0">private static void </span>initialization() {
+        <span class="s2">// ESTABLISH THE PAINTER AND GIVE IT A SUBSTANTIAL BRUSH WIDTH</span>
+        miro = <span class="s0">new </span>SPainter(<span class="s3">&quot;Chromesthesia&quot;</span>,<span class="s4">500</span>,<span class="s4">500</span>);
+        miro.setVisible(<span class="s0">false</span>);
+        miro.setBrushWidth(<span class="s4">7</span>);
+        <span class="s2">// ESTABLISH THE CHROMESTITIC PITCH CLASS OBJECTS</span>
+        pitches = establishPitches(miro);
+        display(pitches);
+
+    }
+
+    <span class="s0">private static </span>String getInput() {
+        miro.setVisible(<span class="s0">false</span>);
+        String label = <span class="s3">&quot;Please enter a melody in ABC notation, or EXIT ...     &quot;</span>;
+        String input = JOptionPane.showInputDialog(<span class="s0">null</span>,label);
+        miro.setVisible(<span class="s0">true</span>);
+        <span class="s0">if </span>( input == <span class="s0">null </span>) { input = <span class="s3">&quot;&quot;</span>; }
+        <span class="s0">return </span>input;
+
+    }
+
+    <span class="s0">static private void </span>cleanup() {
+        System.exit(<span class="s4">0</span>);
+
+    }
+
+}
+</pre>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Streets.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #008000; font-weight: bold;}
+.s3 { color: #0000ff;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Streets.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>arraylistplay;
+
+<span class="s0">import </span>java.util.ArrayList;
+
+<span class="s0">public class </span>Streets {
+    <span class="s0">public static void </span>main(String[] args) {
+
+        ArrayList&lt;String&gt; streets = <span class="s0">new </span>ArrayList&lt;&gt;();
+
+        streets.add(<span class="s2">&quot;Iberville&quot;</span>);
+        streets.add(<span class="s2">&quot;Decatur&quot;</span>);
+        streets.add(<span class="s2">&quot;Toulouse&quot;</span>);
+        streets.add(<span class="s2">&quot;Bourbon&quot;</span>);
+        streets.add(<span class="s2">&quot;Dauphine&quot;</span>);
+        streets.add(<span class="s2">&quot;Royal&quot;</span>);
+        streets.add(<span class="s2">&quot;St Ann&quot;</span>);
+        streets.add(<span class="s2">&quot;St Peter&quot;</span>);
+        streets.add(<span class="s2">&quot;Conti&quot;</span>);
+        streets.add(<span class="s2">&quot;Exchange&quot;</span>);
+        streets.add(<span class="s2">&quot;Bienville&quot;</span>);
+        streets.add(<span class="s2">&quot;Dumaine&quot;</span>);
+
+        System.out.println(<span class="s2">&quot;length of streets array = &quot; </span>+ streets.size());
+        System.out.println(<span class="s2">&quot;first streets = &quot; </span>+ streets.get(<span class="s3">0</span>));
+        System.out.println(<span class="s2">&quot;last streets = &quot; </span>+ streets.get(<span class="s3">11</span>));
+        System.out.println(<span class="s2">&quot;last streets = &quot; </span>+ streets.get(streets.size()-<span class="s3">1</span>));
+
+        System.out.println(<span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">The initial array ...&quot;</span>);
+        <span class="s0">int </span>i = <span class="s3">0</span>;
+        <span class="s0">while </span>( i &lt; streets.size() ) {
+            System.out.println(streets.get(i));
+            i = i + <span class="s3">1</span>;
+        }
+
+        String a = streets.get(<span class="s3">0</span>);
+        streets.set(<span class="s3">0</span>, streets.get(streets.size() - <span class="s3">1</span>));
+        streets.set(streets.size() - <span class="s3">1</span>, a);
+
+        System.out.println(<span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">The final array ...&quot;</span>);
+        <span class="s0">for </span>( <span class="s0">int </span>x = <span class="s3">0</span>; x &lt; streets.size(); x = x + <span class="s3">1 </span>) {
+            System.out.println(streets.get(x));
+        }
+    }
+}
+</pre>
+</body>
+</html>

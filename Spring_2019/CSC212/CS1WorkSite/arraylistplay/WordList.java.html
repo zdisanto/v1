@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>WordList.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #808080; font-style: italic;}
+.s3 { color: #0000ff;}
+.s4 { color: #008000; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+WordList.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>arraylistplay;
+
+<span class="s0">import </span>java.io.File;
+<span class="s0">import </span>java.io.FileNotFoundException;
+<span class="s0">import </span>java.util.ArrayList;
+<span class="s0">import </span>java.util.Scanner;
+
+<span class="s0">public class </span>WordList {
+        <span class="s2">// VARIABLES LOCAL TO THE CLASS, AND HENCE GLOBAL TO THE METHODS</span>
+        <span class="s0">private static final int </span>LIMIT = <span class="s3">1000</span>;
+        <span class="s0">private static </span>ArrayList&lt;String&gt; words = <span class="s0">new </span>ArrayList&lt;&gt;(LIMIT); <span class="s2">//turned into an ARRAY LIST</span>
+        <span class="s0">private static int </span>numberofWords = <span class="s3">0</span>;
+        <span class="s0">private static </span>Scanner commandReader = <span class="s0">new </span>Scanner(System.in);
+
+        <span class="s0">public static void </span>main(String[] args) {
+                <span class="s0">try </span>{
+                        <span class="s2">// ESTABLISH THE ARRAY OF NUMBERS</span>
+                        readwords();
+                        <span class="s2">// CHECK THE DATA</span>
+                        // System.out.println(&quot;\nThe original list of numbers ...&quot;);
+                        // displayNumbers();
+                        // ENTER THE INTERPRETER
+                        interpreter();
+                } <span class="s0">catch </span>(FileNotFoundException ex) {
+                        System.out.println(<span class="s4">&quot;The file was not found. Please think again.&quot;</span>);
+                        System.exit(-<span class="s3">1</span>);
+                }
+        }
+
+        <span class="s2">// Assuming that the data file will be found in the public_html/data</span>
+        // subdirectory of the user’s home directory.
+        <span class="s0">private static </span>Scanner establishScanner(String fn) <span class="s0">throws </span>FileNotFoundException {
+                String separator = File.separator;
+                String homeDirectory = System.getProperty(<span class="s4">&quot;user.home&quot;</span>);
+                String path = homeDirectory + separator + <span class="s4">&quot;public_html&quot; </span>+ separator + <span class="s4">&quot;data&quot; </span>+ separator;
+                String fullFileName = path + fn;
+                <span class="s0">return new </span>Scanner(<span class="s0">new </span>File(fullFileName));
+        }
+
+        <span class="s0">private static void </span>readwords() <span class="s0">throws </span>FileNotFoundException {
+                Scanner scanner = establishScanner(<span class="s4">&quot;WordSet.txt&quot;</span>);
+                <span class="s0">while </span>(scanner.hasNext()) {
+                        words.add(scanner.next());
+                        numberofWords = numberofWords + <span class="s3">1</span>;
+                }
+        }
+
+        <span class="s0">private static void </span>displayNumbers() {
+                <span class="s0">for </span>(<span class="s0">int </span>x = <span class="s3">0</span>; x &lt; numberofWords; x = x + <span class="s3">1</span>) {
+                        System.out.println(words.get(x));
+                }
+        }
+
+        <span class="s0">private static void </span>interpreter() {
+                System.out.print(<span class="s4">&quot;&gt;&gt;&gt; &quot;</span>);
+                String command = commandReader.next();
+                <span class="s0">if </span>(command.equalsIgnoreCase(<span class="s4">&quot;DISPLAY&quot;</span>)) {
+                        interpreterDisplayCommand();
+                } <span class="s0">else if </span>(command.equalsIgnoreCase(<span class="s4">&quot;PRINT&quot;</span>)) {
+                        interpretPrintCommand();
+                } <span class="s0">else if </span>(command.equalsIgnoreCase(<span class="s4">&quot;SWAP&quot;</span>)) {
+                        interpretSwapCommand();
+                } <span class="s0">else if </span>(command.equalsIgnoreCase(<span class="s4">&quot;ADD&quot;</span>)) {
+                        interpretAddCommand();
+                } <span class="s0">else if </span>(command.equalsIgnoreCase(<span class="s4">&quot;HELP&quot;</span>)) {
+                        interpretHelpCommand();
+                } <span class="s0">else if </span>(command.equalsIgnoreCase(<span class="s4">&quot;EXIT&quot;</span>)) {
+                        System.exit(<span class="s3">0</span>);
+                } <span class="s0">else </span>{
+                        System.out.println(<span class="s4">&quot;### Unrecognizable command: &quot; </span>+ command);
+                }
+                interpreter();
+        }
+
+        <span class="s0">private static void </span>interpreterDisplayCommand() {
+                displayNumbers();
+        }
+
+        <span class="s0">private static void </span>interpretPrintCommand() {
+                String operand = commandReader.next();
+                <span class="s0">if </span>(operand.equalsIgnoreCase(<span class="s4">&quot;FIRST&quot;</span>)) {
+                        System.out.println(words.get(<span class="s3">0</span>));
+                } <span class="s0">else if </span>(operand.equalsIgnoreCase(<span class="s4">&quot;LAST&quot;</span>)) {
+                        System.out.println(words.get(numberofWords - <span class="s3">1</span>));
+                } <span class="s0">else </span>{
+                        <span class="s0">int </span>index = Integer.valueOf(operand);
+                        System.out.println(words.get(index - <span class="s3">1</span>));
+                }
+        }
+
+        <span class="s0">private static void </span>interpretHelpCommand() {
+                System.out.println(<span class="s4">&quot;HELP - display a menu of commands&quot;</span>);
+                System.out.println(<span class="s4">&quot;DISPLAY - display the list of numbers&quot;</span>);
+                System.out.println(<span class="s4">&quot;PRINT - print a number (FIRST;LAST;nth)&quot;</span>);
+                System.out.println(<span class="s4">&quot;SWAP - exchange two elements (nth;mth)&quot;</span>);
+                System.out.println(<span class="s4">&quot;ADD - add a number to the list (FIRST;LAST)&quot;</span>);
+                System.out.println(<span class="s4">&quot;EXIT - terminate execution of the program&quot;</span>);
+        }
+
+        <span class="s0">private static void </span>interpretSwapCommand() {
+                <span class="s0">int </span>position1 = commandReader.nextInt() ;
+                <span class="s0">int </span>position2 = commandReader.nextInt() ;
+                words.set(position1, words.set(position2, words.get(position1)));
+
+        }
+
+        <span class="s0">private static void </span>interpretAddCommand() {
+                String position = commandReader.next();
+                <span class="s0">if </span>(position.equalsIgnoreCase(<span class="s4">&quot;LAST&quot;</span>)) {
+                        addLast();
+                } <span class="s0">else if </span>(position.equalsIgnoreCase(<span class="s4">&quot;FIRST&quot;</span>)) {
+                        addFirst();
+                } <span class="s0">else </span>{
+                        System.out.println(<span class="s4">&quot;### invalid operand for add command&quot;</span>);
+                }
+                numberofWords = numberofWords + <span class="s3">1</span>;
+        }
+
+        <span class="s0">private static void </span>addLast() {
+                words.add(commandReader.next());
+        }
+
+        <span class="s0">private static void </span>addFirst() {
+                words.add(<span class="s3">0</span>, commandReader.next());
+        }
+}
+
+</pre>
+</body>
+</html>
