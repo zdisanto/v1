@@ -1,0 +1,24 @@
+<DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<title>My PHP Return Page</title>
+</head>
+<body>
+<p>Returning from Data</p>
+<div id="formData">
+<?php
+	$lName = $_POST["lName"];
+	$fName = $_POST["fName"];
+	$email = $_POST["email"];
+	$city = $_POST["city"];
+	$state = $_POST["state"];
+	$zip = $_POST["zip"];
+	$phone = $_POST["phone"];
+	echo "Hello, ".$fName;
+	echo " ".$lName."<br>";
+	echo "You live in ".$city;
+	echo " ".$state;
+	echo "   ".$zip."<br>";
+	echo "Your email is: ".$email."<br>";
+	echo "Your phone number is: ".$phone;

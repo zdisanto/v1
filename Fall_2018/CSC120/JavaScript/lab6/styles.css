@@ -1,0 +1,11 @@
+body{
+	background-color: grey;
+}
+.VoteLab{
+	position:absolute;
+	left: 25%;
+	background-color:#69CCFF;
+	width:50%;
+	height:50%;
+	padding:25px;
+}

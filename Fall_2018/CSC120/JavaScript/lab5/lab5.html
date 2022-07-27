@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="eng">
+<head>
+<!---
+Lab for Oct 18 Heads and Tails
+--->
+<style>
+.newColor{background-color:blue;}
+</style>
+	<title>My First Java Script</title>
+	<script>
+	function changeText(){
+	document.getElementById("someParagraph").innerHTML="I don't know! Not ME!";
+	}
+	function myFunction(){
+	document.getElementsByTagName("p")[3].setAttribute("class", "newColor");
+	}
+	</script>
+<mega charset="utf-8">
+</head>
+<body>
+<h2>Zo DiSanto</h2>
+	~Java Script Labs 18th of October~
+	<p id="someParagraph"> I don't know who wrote on the white board in permanent marker!</p>
+	<p><input type="button" value="Who did it?" onclick="changeText()"/></p>
+	<hr/>
+	<p> 
+	This is the 3<sup>rd</sup>
+	<img id="coin" src="heads.gif"></br>
+	<button onclick="getElementById('coin').src='tails.gif'">Tails</button></br>
+	<button onclick="getElementById('coin').src='heads.gif'">Heads</button></br>
+	This is the end of the 3<sup>rd</sup>
+	</p>
+	<p>
+	<button onclick="myFunction()"> Change Background Color</button>
+	</p>
+</body>
+</html>

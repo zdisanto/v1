@@ -1,0 +1,15 @@
+
+heading h1{color: blue;}
+
+.content{
+	position: absolute;
+	left: 25%;
+	width: 50%; 
+	margin-right:25px;
+	padding-right:25px;
+	margin-left: 25px;
+	padding-left: 25px;
+	border-style: solid;
+}
+ul{list-style: }
+p {background-color: yellow;}

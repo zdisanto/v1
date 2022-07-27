@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+	<title>Validation</title>
+	<mega charset="utf-8"
+</head>
+<body>
+<!---
+Lab for Nov 15 Validation
+--->
+</p><p id="Hint"></p>
+<div id="myForm">
+<form id="myForm" name="theForm" class="group" action="XX" method="POST">
+<h3><legend>Account Info</legend></h3>
+<ul>
+<li><label for="lName">Last Name:<br><input type="text" name="lName" placeholder="Enter Last Name" pattern="[A-Za-z]+"/></label><br>
+<li><label for="fName">First Name:<br><input type="text" name="fName" placeholder="Enter First Name" pattern="[A-Za-z]+"/></label><br>
+<li><label for="zipCode">Zip code:<br><input type="digits" name="myZip" placeholder="Enter Zip Code" pattern="[0-9]{5}" title="Must use digits only"/></label><br>
+<li><label for="password">Password:<br><input type="password" name="myPass" placeholder="Enter Password" pattern="" title="Must contain at least one number, one upper-case letter, a special character and 8 or more characters"></label>
+</ul> 
+<br>
+
+<p><label>Pick a Class<select name="class"></label>
+<option value="csc">CSC 120</option>
+<option value="his">HIS 100</option>
+<option value="ant">ANT 111</option>
+<option value="psy">PSY 280</option></select></p>
+<br>
+
+<h3>What is your favourite topping on pizza?</h3>
+<label>Cheese<input type="checkbox" name="topping" value="cheese" checked><br>
+<label>Pepperoni<input type="checkbox" name="topping" value="pepperoni"><br>
+<label>Sausage<input type="checkbox" name="topping" value="sausage"><br>
+<br>
+
+<h3>What is your favourite animal?</h3>
+<label>Dog<input type="radio" name="pet" value="dog"/>
+<label>Cat<input type="radio" name="pet" value="cat"/>
+<label>fish<input type="radio" name="pet" value="fish"/>
+<br>
+
+<h3>Have any comments?</h3>
+<p><label>Comments:</label><textarea name="comments" placeholder="Comments"></textarea></p>
+<br>
+
+<p><label>Favourite Colour:<input type="color"></label></p>
+<p><input type="range"/></p>
+</form>
+</div>
+<script>
+document.theForm.lName.onfocus=function(){
+document.getElementById("Hint").innerHTML="Please Enter Your Name!";
+}
+document.theForm.lName.onblur=function(){
+document.getElementById("Hint").innerHTML="";
+}
+document.theForm.fName.onfocus=function(){
+document.getElementById("Hint").innerHTML="Please Enter Your email!";
+}
+document.theForm.fName.onblur=function(){
+document.getElementById("Hint").innerHTML="";
+}
+document.theForm.myZip.onfocus=function(){
+document.getElementById("Hint").innerHTML="Please Enter Your Zip Code!";
+}
+document.theForm.myZip.onblur=function(){
+document.getElementById("Hint").innerHTML="";
+}
+document.theForm.myPass.onfocus=function(){
+document.getElementById("Hint").innerHTML="Please Enter Your Password!";
+}
+document.theForm.myPass.onblur=function(){
+document.getElementById("Hint").innerHTML="";
+}
+</script>
+</body>
+</html>  

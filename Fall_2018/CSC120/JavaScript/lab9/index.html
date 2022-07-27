@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+<style>
+.theHint{
+	color:red;
+}
+</style>
+<title>~Points Lab~</title>
+</head>
+<!---
+Lab for Nov 13 
+--->
+<body>
+<p id="Hint"></p>
+<form id="myform" name="theform" class="thegroup" action="#" method="POST">
+<legend>Log in Information</legend>
+<span id="Hint" class="theHint"></span>
+<ul>
+<li><label for="myname">Name</label>
+<input type="text" name="myname" title="Please Enter Your Name" placeholder="Enter Name" required/></li>
+<li><label for="myemail">Email</label>
+<input type="email" name="myemail" placeholder="Enter Email" required autocomplete="off"/></li>
+<li><label for="mypassword">Password</label>
+<input type="password" name="password" placeholder="Enter Password" id="password"/></li>
+</ul>
+</form>
+<script>
+document.theform.myname.onfocus=function(){
+document.getElementById("Hint").innerHTML="Please Enter Your Name!";
+}
+document.theform.myname.onblur=function(){
+document.getElementById("Hint").innerHTML="";
+}
+document.theform.myemail.onfocus=function(){
+document.getElementById("Hint").innerHTML="Please Enter Your email!";
+}
+document.theform.myemail.onblur=function(){
+document.getElementById("Hint").innerHTML="";
+}
+</script>
+</body>
+</html>

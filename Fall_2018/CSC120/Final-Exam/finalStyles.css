@@ -1,0 +1,52 @@
+body {
+	background-image: url("backgroundImage.jpg");
+	padding-left:15%;
+}
+h1 {
+	text-align:center;
+}
+
+  #theForm{
+position:absolute;
+border-style:solid;
+left:25%;
+top:30%;
+width:30%;
+background-color:#5F9EA0;
+box-shadow: 10px 10px 5px #888888;
+padding:10px;
+}
+header {
+	background-color: #5D667F;
+	width: 70%;
+	left:15%;
+	padding-left:15%;
+	padding-right:15%;
+}
+nav {
+	background-color: #487CFF;
+	width:49%;
+	left:15%;
+	padding-left:25%;
+}
+ul{
+    padding-right: 1.5em;
+    list-style: none;
+}
+li{
+    display: inline;
+    padding-right: 1.5em;
+}
+main{
+	background-color:#5D667F;
+	width:70%;
+	left:15%;
+	padding-right:1.5em;
+}
+footer{
+	background-color:#5D667F;
+	width:70%;
+	left:15%;
+	padding-right:1.5em;
+	padding-left:1.5em;
+}

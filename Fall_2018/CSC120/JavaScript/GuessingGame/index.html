@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+	<title>Guessing Game</title>
+	<script src="gameJavaScript.js"></script>
+	<link rel="stylesheet" type="text/css" href="gameStyles.css">
+</head>
+<body>
+<!---
+Lab for Nov 6 Guessing Game
+--->
+<div class="startingBoard">
+<h2>Do you want to play a game?</h2>
+<p>You have to guess a number between 1 and 100!</p>
+<button type="button" onclick="Yes()">Yes</button>
+<button type="button" onclick="No()">No</button>
+
+<div id="inputArea">
+
+<input type="text" id="guess"></input>
+<input type="button" onclick="Guess()">Guess Here</button>
+<p id="reply">
+</p>
+</div>
+</body>
+</html>

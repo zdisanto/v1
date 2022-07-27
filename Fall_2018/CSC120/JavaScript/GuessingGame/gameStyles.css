@@ -1,0 +1,26 @@
+body{
+ background-color:#F1FEFF;
+	}
+
+.startingBoard{
+	position:absolute;
+	top:25%;
+	left:25%;
+	width:310px;
+	height:175px;
+	border-style:groove;
+	background-color:#FBE8B2;
+	padding:30px;
+}	
+	
+#inputArea{
+	position:absolute;
+	top:73%;
+	left:-1.5%;
+	width:355px;
+	background-color:#E7B7B2;
+	padding:10px;
+	border-style:groove;
+	border-color:#E86178;
+	display:none;
+}

@@ -1,0 +1,27 @@
+body{
+	background-color: grey;
+}
+.Calculator{
+	background-color: #A5D2E8;
+	position: absolute;
+	left: 585px;
+	top: 235px;
+	height: 150px;
+	width: 120px;
+}
+#reply{
+	position: absolute;
+	left: 585px;
+	top: 190px;
+	height:25px;
+	width: 116px;
+	background-color: white;
+	border: 2px;
+	border-style: solid;
+	border-color: black;
+}
+.numberButtons{
+	position: relative;
+	left: 7px;
+	top: 10px;
+}

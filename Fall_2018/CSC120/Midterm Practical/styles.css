@@ -1,0 +1,42 @@
+body {
+    background-image: url("background.jpg");
+    font-family: Verdana, Arial, sans-serif;
+}
+header {
+	background-color:#000033;
+	background-image: url("headerbackblue.jpg");
+	background-repeat: no-repeat;
+	background-position: right;
+	color:#FFFF99;
+	line-height:400%;
+	text-indent:1em;
+}
+
+h1 h2 h3 {
+  font-style:Georgia, Times New Roman, serif;
+}
+
+.nav{
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+nav a{
+  text-decoration: none;
+}
+
+	p{
+		text-indent: 2em;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: black;
+   text-align: center;
+   font-size: .80em;
+   font-style: italic;
+}
+
