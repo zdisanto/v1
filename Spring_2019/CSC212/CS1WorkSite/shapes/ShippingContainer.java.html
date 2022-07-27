@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>ShippingContainer.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #808080; font-style: italic;}
+.s3 { color: #008000; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ShippingContainer.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>shapes;
+
+<span class="s0">import </span>java.util.Scanner;
+
+<span class="s0">public class </span>ShippingContainer {
+    <span class="s0">public static void </span>main(String[] args) {
+        <span class="s2">//In</span>
+        Scanner scanner = <span class="s0">new </span>Scanner(System.in);
+        System.out.println(<span class="s3">&quot;Width = &quot;</span>);
+        <span class="s0">double </span>width = scanner.nextDouble();
+        System.out.println(<span class="s3">&quot;Length = &quot;</span>);
+        <span class="s0">double </span>length = scanner.nextDouble();
+        System.out.println(<span class="s3">&quot;Height = &quot;</span>);
+        <span class="s0">double </span>height = scanner.nextDouble();
+        <span class="s2">//Objects</span>
+        SRectangle face = <span class="s0">new </span>SRectangle(width, length);
+        SRectangle key = <span class="s0">new </span>SRectangle(height, face.diagonal());
+        <span class="s0">double </span>distance = key.diagonal();
+        <span class="s2">//Prints</span>
+        System.out.println(<span class="s3">&quot;Area of Face: &quot; </span>+ face);
+        System.out.println(<span class="s3">&quot;Area of Key: &quot; </span>+ key);
+        System.out.println(<span class="s3">&quot;Length of Distance from Corner to Corner: &quot; </span>+ distance);
+    }
+}</pre>
+</body>
+</html>

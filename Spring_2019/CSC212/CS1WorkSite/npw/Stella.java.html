@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Stella.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #808080; font-style: italic;}
+.s3 { color: #0000ff;}
+.s4 { color: #008000; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Stella.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>npw;
+
+<span class="s0">import </span>painter.SPainter;
+<span class="s0">import </span>shapes.SSquare;
+
+<span class="s0">import </span>javax.swing.*;
+<span class="s0">import </span>java.awt.*;
+<span class="s0">import </span>java.util.Random;
+<span class="s0">import </span>java.util.Scanner;
+
+<span class="s0">public class </span>Stella {
+
+    <span class="s0">public </span>Stella() {
+        paintTheImage();
+    }
+
+    <span class="s0">private void </span>paintTheImage() {
+        <span class="s2">//Variables</span>
+        <span class="s0">int </span>Canvas = <span class="s3">800</span>;
+        <span class="s0">int </span>lSquare = (Canvas -<span class="s3">100</span>);
+        <span class="s2">// Canvas and Prompt</span>
+        <span class="s0">int </span>numOfSquares = getNumb(<span class="s4">&quot;How many Squares on Stella&quot;</span>);
+        SPainter p = <span class="s0">new </span>SPainter(<span class="s4">&quot;Stella&quot;</span>, Canvas, Canvas);
+        <span class="s2">//The square</span>
+        SSquare sq = <span class="s0">new </span>SSquare(lSquare);
+        <span class="s2">//Change Var</span>
+        <span class="s0">int </span>sSide = lSquare / numOfSquares;
+
+        CreateStella(p, numOfSquares, sSide, sq);
+    }
+
+    <span class="s0">public static void </span>main(String[] args) {
+        SwingUtilities.invokeLater(<span class="s0">new </span>Runnable() {
+            <span class="s0">public void </span>run() {
+                <span class="s0">new </span>Stella();
+            }
+        });
+    }
+
+    <span class="s0">private void </span>CreateStella(SPainter p, <span class="s0">int </span>numOfSquares, <span class="s0">int </span>sidechange, SSquare sq) {
+        <span class="s0">boolean </span>aColor = <span class="s0">true</span>;
+        Color rcolor1 = randomColor();
+        Color rcolor2 = randomColor();
+
+        <span class="s0">for </span>(<span class="s0">int </span>i = <span class="s3">0</span>; i &lt; numOfSquares; i++ ) {
+            <span class="s0">if </span>(aColor == <span class="s0">true </span>) {
+                p.setColor( rcolor1);
+                p.paint( sq );
+                sq.shrink( sidechange );
+                aColor = <span class="s0">false</span>;
+            } <span class="s0">else </span>{
+                p.setColor(rcolor2);
+                p.paint(sq);
+                sq.shrink(sidechange);
+                aColor = <span class="s0">true</span>;
+            }
+        }
+    }
+
+    <span class="s0">private static int </span>getNumb(String prompt) {
+        String nss = JOptionPane.showInputDialog(<span class="s0">null</span>,prompt+<span class="s4">&quot;?&quot;</span>);
+        Scanner scanner = <span class="s0">new </span>Scanner(nss);
+        <span class="s0">return </span>scanner.nextInt();
+    }
+
+    <span class="s0">private </span>Color randomColor() {
+        Random rgen = <span class="s0">new </span>Random();
+        <span class="s0">int </span>r = rgen.nextInt(<span class="s3">255</span>);
+        <span class="s0">int </span>g = rgen.nextInt(<span class="s3">255</span>);
+        <span class="s0">int </span>b = rgen.nextInt(<span class="s3">255</span>);
+        <span class="s0">return new </span>Color(r, g, b);
+    }
+}
+
+
+
+</pre>
+</body>
+</html>

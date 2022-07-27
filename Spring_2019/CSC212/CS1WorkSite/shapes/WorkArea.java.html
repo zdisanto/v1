@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>WorkArea.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #808080; font-style: italic;}
+.s3 { color: #0000ff;}
+.s4 { color: #008000; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+WorkArea.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>shapes;
+
+<span class="s0">public class </span>WorkArea {
+    <span class="s0">public static void </span>main(String[] args) {
+        <span class="s2">//Desk (1)</span>
+        SRectangle desk = <span class="s0">new </span>SRectangle(<span class="s3">24</span>, <span class="s3">36</span>);
+        System.out.println(<span class="s4">&quot;Desk = &quot; </span>+ desk.toString());
+        System.out.println(<span class="s4">&quot;Area of desk = &quot; </span>+ desk.area());
+        <span class="s0">double </span>deskArea = desk.area();
+
+        <span class="s2">//Books (2)</span>
+        SRectangle book = <span class="s0">new </span>SRectangle(<span class="s3">11</span>, <span class="s3">8.5</span>);
+        System.out.println(<span class="s4">&quot;Book = &quot; </span>+ book.toString());
+        System.out.println(<span class="s4">&quot;Area of book = &quot; </span>+ book.area());
+        <span class="s0">double </span>areaOfBooks = (book.area() * <span class="s3">2</span>);
+        System.out.println(<span class="s4">&quot;Total area of two books = &quot; </span>+ areaOfBooks);
+
+        <span class="s2">//Glass (3)</span>
+        SCircle glass = <span class="s0">new </span>SCircle(<span class="s3">1.15</span>);
+        System.out.println(<span class="s4">&quot;Glass = &quot; </span>+ glass.toString());
+        System.out.println(<span class="s4">&quot;Area of glass = &quot; </span>+ glass.area());
+
+        <span class="s2">//Coaster (3)</span>
+        SSquare coaster = glass.circumscribingSquare();
+        System.out.println(<span class="s4">&quot;Coaster = &quot; </span>+ coaster.toString());
+        System.out.println(<span class="s4">&quot;Area of coaster = &quot; </span>+ coaster.area());
+        <span class="s0">double </span>areaOfCoasters = (coaster.area() * <span class="s3">3</span>);
+        System.out.println(<span class="s4">&quot;Total area of three coasters = &quot; </span>+ areaOfCoasters);
+
+        <span class="s2">//Plate (3)</span>
+        SCircle plate = <span class="s0">new </span>SCircle(<span class="s3">6</span>);
+        System.out.println(<span class="s4">&quot;Plate = &quot; </span>+ plate.toString());
+        System.out.println(<span class="s4">&quot;Area of plate = &quot; </span>+ plate.area());
+        <span class="s0">double </span>areaOfPlates = (plate.area() * <span class="s3">3</span>);
+        System.out.println(<span class="s4">&quot;Total area of three plates = &quot; </span>+ areaOfPlates);
+
+        <span class="s2">//All Objects</span>
+        <span class="s0">double </span>allObjectAreas = (areaOfPlates + areaOfCoasters + areaOfBooks);
+        System.out.println(<span class="s4">&quot;Total area of all objects on desk = &quot; </span>+ allObjectAreas);
+
+        <span class="s2">//Remaining Areas</span>
+        <span class="s0">double </span>remainingArea = (deskArea - allObjectAreas);
+        System.out.println(<span class="s4">&quot;The remaining area of desk = &quot; </span>+ remainingArea);
+
+    }
+
+}
+</pre>
+</body>
+</html>

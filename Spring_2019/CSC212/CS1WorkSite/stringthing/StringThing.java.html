@@ -1,0 +1,149 @@
+<html>
+<head>
+<title>StringThing.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080; font-style: italic;}
+.s1 { color: #000000;}
+.s2 { color: #000080; font-weight: bold;}
+.s3 { color: #008000; font-weight: bold;}
+.s4 { color: #0000ff;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+StringThing.java</font>
+</center></td></tr></table>
+<pre><span class="s0">/* 
+ * This program will do a bit of character string processing. 
+ */</span>
+
+
+<span class="s2">package </span>stringthing;
+
+<span class="s2">public class </span>StringThing {
+
+    <span class="s2">public static void </span>main(String[] args) {
+        <span class="s0">//POINT A: CREATE A PRINT SOME STRINGS THAT REPRESENT NAMES</span>
+        String singer = <span class="s3">&quot;Holiday, Billie&quot;</span>;
+        String sculptor = <span class="s3">&quot;Claudel, Camille&quot;</span>;
+        String painter = <span class="s3">&quot;Picasso, Pablo&quot;</span>;
+        String dancer = <span class="s3">&quot;Zotto, Osvalso&quot;</span>;
+        String self = <span class="s3">&quot;Di Santo, Zo&quot;</span>;
+        System.out.println(<span class="s3">&quot;</span><span class="s2">\n</span><span class="s3">Names ...&quot;</span>);
+        System.out.println(singer);
+        System.out.println(sculptor);
+        System.out.println(painter);
+        System.out.println(dancer);
+        System.out.println(self);
+
+        <span class="s0">//POINT B: COMPUTE AND PRINT THE LENGTHS OF THE STRINGS, WITHOUT LABELS</span>
+        <span class="s2">int </span>singerLength = singer.length();
+        <span class="s2">int </span>sculptorLength = sculptor.length();
+        <span class="s2">int </span>painterLength = painter.length();
+        <span class="s2">int </span>dancerLength = dancer.length();
+        <span class="s2">int </span>selfLength = self.length();
+
+        System.out.println(<span class="s3">&quot;</span><span class="s2">\n</span><span class="s3">Name lengths ...&quot;</span>);
+
+        System.out.println(singerLength);
+        System.out.println(sculptorLength);
+        System.out.println(painterLength);
+        System.out.println(dancerLength);
+        System.out.println(selfLength);
+
+        <span class="s0">// POINT C: COMPUTE AND PRINT THE LOCATION OF THE COMMA WITHIN EACH STRING, NO LABELS</span>
+        <span class="s2">int </span>singerCommaPosition = singer.indexOf(<span class="s3">&quot;,&quot;</span>);
+        <span class="s2">int </span>sculptorCommaPosition = sculptor.indexOf(<span class="s3">&quot;,&quot;</span>);
+        <span class="s2">int </span>painterCommaPosition = painter.indexOf(<span class="s3">&quot;,&quot;</span>);
+        <span class="s2">int </span>dancerCommaPosition = dancer.indexOf(<span class="s3">&quot;,&quot;</span>);
+        <span class="s2">int </span>selfCommaPosition = self.indexOf(<span class="s3">&quot;,&quot;</span>);
+
+        System.out.println(<span class="s3">&quot;</span><span class="s2">\n</span><span class="s3">Comma positions ...&quot;</span>);
+
+        System.out.println(<span class="s3">&quot;singerCommaPosition = &quot; </span>+ singerCommaPosition);
+        System.out.println(<span class="s3">&quot;sculptorCommaPosition = &quot; </span>+ sculptorCommaPosition);
+        System.out.println(<span class="s3">&quot;painterCommaPosition = &quot; </span>+ painterCommaPosition);
+        System.out.println(<span class="s3">&quot;dancerCommaPosition = &quot; </span>+ dancerCommaPosition);
+        System.out.println(<span class="s3">&quot;selfCommaPosition = &quot; </span>+ selfCommaPosition);
+
+        <span class="s0">// POINT D: COMPUTE AND PRINT THE FIVE FIRST NAMES, WITH NO LABELS</span>
+
+        String singerFirst = singer.substring(<span class="s4">2 </span>+ singerCommaPosition);
+        String sculptorFirst = sculptor.substring(<span class="s4">2 </span>+ sculptorCommaPosition);
+        String painterFirst = painter.substring(<span class="s4">2 </span>+ painterCommaPosition);
+        String dancerFirst = dancer.substring(<span class="s4">2 </span>+ dancerCommaPosition);
+        String selfFirst = self.substring(<span class="s4">2 </span>+ selfCommaPosition);
+
+        System.out.println(<span class="s3">&quot;</span><span class="s2">\n</span><span class="s3">First names ...&quot;</span>);
+
+        System.out.println(singerFirst);
+        System.out.println(sculptorFirst);
+        System.out.println(painterFirst);
+        System.out.println(dancerFirst);
+        System.out.println(selfFirst);
+
+        <span class="s0">// POINT E: COMPUTE AND PRINT THE FIVE LAST NAMES, WITH NO LABELS</span>
+        String singerLast = singer.substring(<span class="s4">0</span>, singerCommaPosition);
+        String sculptorLast = sculptor.substring(<span class="s4">0</span>, sculptorCommaPosition);
+        String painterLast = painter.substring(<span class="s4">0</span>, painterCommaPosition);
+        String dancerLast = dancer.substring(<span class="s4">0</span>, dancerCommaPosition);
+        String selfLast = self.substring(<span class="s4">0</span>, selfCommaPosition);
+
+        System.out.println(<span class="s3">&quot;</span><span class="s2">\n</span><span class="s3">Last names...&quot;</span>);
+
+        System.out.println(singerLast);
+        System.out.println(sculptorLast);
+        System.out.println(painterLast);
+        System.out.println(dancerLast);
+        System.out.println(selfLast);
+
+        <span class="s0">// POINT F: COMPUTE AND PRINT THE FIRST NAMES, AGAIN</span>
+        System.out.println(<span class="s3">&quot;</span><span class="s2">\n</span><span class="s3">First names, once again ...&quot;</span>);
+        System.out.println(firstName(singer));
+        System.out.println(firstName(sculptor));
+        System.out.println(firstName(painter));
+        System.out.println(firstName(dancer));
+        System.out.println(firstName(self));
+
+        <span class="s0">// POINT G: COMPUTE AND PRINT THE LAST NAMES, AGAIN</span>
+        System.out.println(<span class="s3">&quot;</span><span class="s2">\n</span><span class="s3">Last names, once again ...&quot;</span>);
+        System.out.println(lastName(singer));
+        System.out.println(lastName(sculptor));
+        System.out.println(lastName(painter));
+        System.out.println(lastName(dancer));
+        System.out.println(lastName(self));
+
+        <span class="s0">// POINT H: COMPUTE AND PRINT THE FULL NAMES, NATURAL STYLE</span>
+        System.out.println(<span class="s3">&quot;</span><span class="s2">\n</span><span class="s3">Full names, once again ...&quot;</span>);
+        System.out.println(fullName(singer));
+        System.out.println(fullName(sculptor));
+        System.out.println(fullName(painter));
+        System.out.println(fullName(dancer));
+        System.out.println(fullName(self));
+    }
+
+        <span class="s2">private static </span>String firstName (String directoryStyleName) {
+            <span class="s2">int </span>commaPosition = directoryStyleName.indexOf(<span class="s3">&quot;,&quot;</span>);
+        String first = directoryStyleName.substring(<span class="s4">2 </span>+ commaPosition);
+
+        <span class="s2">return </span>first;
+    }
+
+        <span class="s2">private static </span>String lastName (String directoryStyleName) {
+        <span class="s2">int </span>commaPosition = directoryStyleName.indexOf(<span class="s3">&quot;,&quot;</span>);
+        String last = directoryStyleName.substring(<span class="s4">0</span>, commaPosition);
+
+        <span class="s2">return </span>last;
+    }
+
+        <span class="s2">private static </span>String fullName (String directoryStyleName) {
+        <span class="s2">return </span>firstName(directoryStyleName) + <span class="s3">&quot; &quot; </span>+ lastName(directoryStyleName);
+    }
+
+}
+</pre>
+</body>
+</html>

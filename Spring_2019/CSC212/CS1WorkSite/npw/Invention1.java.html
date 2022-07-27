@@ -1,0 +1,145 @@
+<html>
+<head>
+<title>Invention1.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #008000; font-weight: bold;}
+.s3 { color: #0000ff;}
+.s4 { color: #808080; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Invention1.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>npw;
+
+<span class="s0">import </span>painter.SPainter;
+<span class="s0">import </span>shapes.SCircle;
+<span class="s0">import </span>shapes.SSquare;
+
+<span class="s0">import </span>javax.swing.*;
+<span class="s0">import </span>java.awt.*;
+<span class="s0">import </span>java.awt.geom.Point2D;
+<span class="s0">import </span>java.util.Scanner;
+
+<span class="s0">public class </span>Invention1 {
+
+    <span class="s0">private static </span>String getString(String prompt) {
+        String nss = JOptionPane.showInputDialog(<span class="s0">null</span>, prompt + <span class="s2">&quot;?&quot;</span>);
+        Scanner scanner = <span class="s0">new </span>Scanner(nss);
+        <span class="s0">return </span>scanner.next();
+
+    }
+
+    <span class="s0">private static int </span>getNumber(String promt) {
+        String nss = JOptionPane.showInputDialog(<span class="s0">null</span>, promt+<span class="s2">&quot;?&quot;</span>);
+        Scanner scanner = <span class="s0">new </span>Scanner(nss);
+        <span class="s0">return </span>scanner.nextInt();
+    }
+
+    <span class="s0">private </span>String inputColor = getString(<span class="s2">&quot;Pick a Color for Squares (Red, Orange, Yellow)&quot;</span>);
+    <span class="s0">private </span>String inputColor2 = getString(<span class="s2">&quot;Pick a Color for Circles (Red, Orange, Yellow)&quot;</span>);
+    <span class="s0">int </span>width = getNumber(<span class="s2">&quot;Enter Canvas Width&quot;</span>);
+    <span class="s0">int </span>height = getNumber(<span class="s2">&quot;Enter Canvas Height&quot;</span>);
+
+
+    <span class="s0">int </span>size = <span class="s3">5</span>;
+    SCircle circle = <span class="s0">new </span>SCircle(size);
+    SSquare square = <span class="s0">new </span>SSquare(size*<span class="s3">2</span>);
+    <span class="s0">double </span>squareLimit = width/square.side();
+    <span class="s0">double </span>circleLimit = width/circle.diameter();
+
+    <span class="s0">public static void </span>main(String[] args) {
+        SwingUtilities.invokeLater(<span class="s0">new </span>Runnable() {
+            <span class="s0">public void </span>run() {
+                <span class="s0">new </span>Invention1();
+            }
+        });
+    }
+
+    <span class="s0">public </span>Invention1() {
+        paintTheImage();
+    }
+
+    <span class="s0">public void </span>paintTheImage() {
+        <span class="s4">// Establish the painter</span>
+        SPainter painter = <span class="s0">new </span>SPainter(<span class="s2">&quot;Invention 1&quot;</span>, width, height);
+
+        <span class="s4">// Move the painter to starting positipon (upper left hand corner)</span>
+        painter.moveTo(<span class="s0">new </span>Point2D.Double( <span class="s3">5</span>, <span class="s3">5</span>));
+        paintRows(painter);
+    }
+
+    <span class="s0">private void </span>paintRows(SPainter painter) {
+        <span class="s0">int </span>i = <span class="s3">0</span>;
+        <span class="s0">while</span>(i &lt; circleLimit + squareLimit) {
+            paintCircleRow(painter, circle);
+            painter.moveTo(<span class="s0">new </span>Point2D.Double(<span class="s3">5</span>, <span class="s3">10</span>*i));
+            paintSquareRow(painter, square);
+            painter.moveTo(<span class="s0">new </span>Point2D.Double(<span class="s3">5</span>, <span class="s3">10</span>*i));
+
+            i = i + <span class="s3">1</span>;
+        }
+    }
+
+    <span class="s4">// Circles are spaced tighter together near the bottom of the canvas.</span>
+    <span class="s0">private void </span>paintCircleRow(SPainter painter, SCircle circle) {
+        <span class="s0">int </span>i = <span class="s3">0</span>;
+        <span class="s0">while </span>(i &lt; circleLimit) {
+            paintOneCircle(painter, circle);
+            painter.mrt(circle.diameter());
+            i = i+<span class="s3">1</span>;
+        }
+
+    }
+
+    <span class="s0">private void </span>paintSquareRow(SPainter painter, SSquare square) {
+        <span class="s0">int </span>i = <span class="s3">0</span>;
+        <span class="s0">while </span>(i &lt; squareLimit) {
+        paintOneSquare(painter, square);
+        painter.mrt(square.side());
+        i = i+<span class="s3">1</span>;
+        }
+    }
+
+    <span class="s0">private void </span>paintOneCircle(SPainter painter, SCircle circle) {
+        cColor(painter);
+        painter.paint(circle);
+    }
+
+    <span class="s0">private void </span>paintOneSquare(SPainter painter, SSquare square) {
+        cColor2(painter);
+        painter.paint(square);
+    }
+
+    <span class="s0">private void </span>cColor(SPainter painter) {
+        <span class="s0">if </span>(inputColor.equalsIgnoreCase(<span class="s2">&quot;red&quot;</span>)) {
+            painter.setColor(Color.red);
+        } <span class="s0">else if </span>(inputColor.equalsIgnoreCase(<span class="s2">&quot;orange&quot;</span>)) {
+            painter.setColor(Color.orange);
+        } <span class="s0">else if </span>(inputColor.equalsIgnoreCase(<span class="s2">&quot;yellow&quot;</span>)) {
+            painter.setColor(Color.yellow);
+        } <span class="s0">else </span>{
+            painter.setColor(Color.pink);
+        }
+    }
+
+    <span class="s0">private void </span>cColor2(SPainter painter) {
+        <span class="s0">if </span>(inputColor2.equalsIgnoreCase(<span class="s2">&quot;red&quot;</span>)) {
+            painter.setColor(Color.red);
+        } <span class="s0">else if </span>(inputColor2.equalsIgnoreCase(<span class="s2">&quot;orange&quot;</span>)) {
+            painter.setColor(Color.orange);
+        } <span class="s0">else if </span>(inputColor2.equalsIgnoreCase(<span class="s2">&quot;yellow&quot;</span>)) {
+            painter.setColor(Color.yellow);
+        } <span class="s0">else </span>{
+            painter.setColor(Color.blue);
+        }
+    }
+}</pre>
+</body>
+</html>

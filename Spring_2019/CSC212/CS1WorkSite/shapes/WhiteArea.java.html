@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>WhiteArea.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #808080; font-style: italic;}
+.s3 { color: #0000ff;}
+.s4 { color: #008000; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+WhiteArea.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>shapes;
+
+<span class="s0">public class </span>WhiteArea {
+    <span class="s0">public static void </span>main(String[] args) {
+        <span class="s2">//Doubles</span>
+        <span class="s0">double </span>dotDiameter = <span class="s3">.75 </span>/ <span class="s3">8</span>;
+        <span class="s0">double </span>sideLength = <span class="s3">.75</span>;
+        <span class="s0">double </span>numberOfFaces = <span class="s3">6</span>;
+        <span class="s0">double </span>numberOfDots = <span class="s3">21</span>;
+
+        <span class="s2">//S's</span>
+        SSquare face = <span class="s0">new </span>SSquare(sideLength);
+        SCircle dot = <span class="s0">new </span>SCircle(dotDiameter / <span class="s3">2</span>);
+
+        <span class="s2">//Areas</span>
+        <span class="s0">double </span>areaOfFace = face.area();
+        <span class="s0">double </span>areaOfDot = dot.area();
+
+        <span class="s2">//Total Areas</span>
+        <span class="s0">double </span>sumOfFaces= areaOfFace*numberOfFaces;
+        <span class="s0">double </span>sumOfDots = areaOfDot*numberOfDots;
+
+        <span class="s2">//Remaining</span>
+        <span class="s0">double </span>remainingWhiteArea = sumOfFaces - sumOfDots;
+
+        <span class="s2">//Print</span>
+        System.out.println(<span class="s4">&quot;Total area of the die &quot; </span>+ sumOfFaces);
+        System.out.println(<span class="s4">&quot;Total area of remaining white area &quot; </span>+ remainingWhiteArea);
+    }
+}
+</pre>
+</body>
+</html>

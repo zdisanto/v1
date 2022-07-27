@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>GraySpace.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #808080; font-style: italic;}
+.s3 { color: #0000ff;}
+.s4 { color: #008000; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+GraySpace.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>shapes;
+
+<span class="s0">public class </span>GraySpace {
+    <span class="s0">public static void </span>main(String[] args) {
+        <span class="s2">//Variables (gsg = gray square gap, osg = orange square gap)</span>
+        <span class="s0">double </span>gsg = <span class="s3">3</span>;
+        <span class="s0">double </span>osg = <span class="s3">4.5</span>;
+        <span class="s0">double </span>topGap = <span class="s3">11.5</span>;
+
+        <span class="s2">//Lengths (gsg = gray square gap, lgc= light gray circle)</span>
+        <span class="s0">double </span>darkgraySide = <span class="s3">40</span>;
+        <span class="s0">double </span>lgcRadius = (darkgraySide - (gsg * <span class="s3">2</span>)) /<span class="s3">4</span>;
+        <span class="s0">double </span>ocRadius = (darkgraySide - (topGap + osg)) /<span class="s3">2</span>;
+
+        <span class="s2">//# of Objects</span>
+        <span class="s0">double </span>numberDarkGray = <span class="s3">1</span>;
+        <span class="s0">double </span>numberLightGray = <span class="s3">2</span>;
+        <span class="s0">double </span>numberOrange = <span class="s3">1</span>;
+
+        <span class="s2">//Circles (oc = orange circle)</span>
+        SCircle lgc = <span class="s0">new </span>SCircle(lgcRadius);
+        SCircle oc =  <span class="s0">new </span>SCircle(ocRadius);
+
+        <span class="s2">//Some Math using shapes ;)</span>
+        SSquare DarkGray = <span class="s0">new </span>SSquare(darkgraySide);
+        SSquare LightGray = lgc.inscribingSquare();
+        SSquare orangeSquare = oc.inscribingSquare();
+
+        <span class="s2">//Area</span>
+        <span class="s0">double </span>areaOfDarkGray = DarkGray.area();
+        <span class="s0">double </span>areaOfLightGray = LightGray.area();
+        <span class="s0">double </span>areaOfOrange = orangeSquare.area();
+
+        <span class="s2">//Totals</span>
+        <span class="s0">double </span>totalDarkGray = areaOfDarkGray*numberDarkGray;
+        <span class="s0">double </span>totalLightGray = areaOfLightGray*numberLightGray;
+        <span class="s0">double </span>totalOrange = areaOfOrange*numberOrange;
+
+        <span class="s2">//Final Maths</span>
+        <span class="s0">double </span>finalareaDarkGray = areaOfDarkGray-(totalLightGray+totalOrange);
+
+        <span class="s2">//Print</span>
+        System.out.println(<span class="s4">&quot;Area of Dark Gray Sqaure: &quot; </span>+ totalDarkGray);
+        System.out.println(<span class="s4">&quot;Area of a Light Square: &quot; </span>+ totalLightGray);
+        System.out.println(<span class="s4">&quot;Area of Orange Square: &quot; </span>+ totalOrange);
+        System.out.println(<span class="s4">&quot;Area of Remaining Dark Gray Square: &quot; </span>+ finalareaDarkGray);
+    }
+
+}</pre>
+</body>
+</html>

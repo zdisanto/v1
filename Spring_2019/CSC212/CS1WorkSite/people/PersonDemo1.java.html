@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>PersonDemo1.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080; font-style: italic;}
+.s1 { color: #000000;}
+.s2 { color: #000080; font-weight: bold;}
+.s3 { color: #008000; font-weight: bold;}
+.s4 { color: #0000ff;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+PersonDemo1.java</font>
+</center></td></tr></table>
+<pre><span class="s0">/* 
+ * PersonDemo1 is a simple program to create and textually display Person objects 
+ */</span>
+
+<span class="s2">package </span>people;
+
+<span class="s2">public class </span>PersonDemo1 {
+    <span class="s2">public static void </span>main(String[] args) {
+        <span class="s0">// Create the six person objects</span>
+        Person bd = <span class="s2">new </span>Person (<span class="s3">&quot;Bob Dylan&quot;</span>, <span class="s4">5</span>, <span class="s4">24</span>, <span class="s4">1941</span>);
+        Person nr = <span class="s2">new </span>Person (<span class="s3">&quot;Noomi Rapace&quot;</span>, <span class="s4">12</span>, <span class="s4">28</span>, <span class="s4">1974</span>);
+        Person pw = <span class="s2">new </span>Person (<span class="s3">&quot;Pharrell Williams&quot;</span>, <span class="s4">4</span>, <span class="s4">5</span>, <span class="s4">1973</span>);
+        Person fs = <span class="s2">new </span>Person (<span class="s3">&quot;Frank Sinatra&quot;</span>, <span class="s4">12</span>, <span class="s4">12</span>, <span class="s4">1915</span>);
+        Person dk = <span class="s2">new </span>Person (<span class="s3">&quot;Diana Krall&quot;</span>, <span class="s4">11</span>, <span class="s4">16</span>, <span class="s4">1964</span>);
+        Person zpd = <span class="s2">new </span>Person (<span class="s3">&quot;Zo Di Santo&quot;</span>, <span class="s4">1</span>, <span class="s4">14</span>, <span class="s4">1999</span>);
+
+        <span class="s0">// Display the six person</span>
+        System.out.println(bd + <span class="s3">&quot; &quot; </span>+ bd.initials() + <span class="s3">&quot; &quot; </span>+ bd.isBoomer());
+        System.out.println(nr + <span class="s3">&quot; &quot; </span>+ nr.initials() + <span class="s3">&quot; &quot; </span>+ nr.isBoomer());
+        System.out.println(pw + <span class="s3">&quot; &quot; </span>+ pw.initials() + <span class="s3">&quot; &quot; </span>+ pw.isBoomer());
+        System.out.println(fs + <span class="s3">&quot; &quot; </span>+ fs.initials() + <span class="s3">&quot; &quot; </span>+ fs.isBoomer());
+        System.out.println(dk + <span class="s3">&quot; &quot; </span>+ dk.initials() + <span class="s3">&quot; &quot; </span>+ dk.isBoomer());
+        System.out.println(zpd + <span class="s3">&quot; &quot; </span>+ zpd.initials() + <span class="s3">&quot; &quot; </span>+ zpd.isBoomer());
+    }
+}
+</pre>
+</body>
+</html>
