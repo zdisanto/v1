@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  font-family: times;
+  margin: 0;
+}
+header {
+  background: url('images/Lost.jpeg');
+  padding: 80px;
+  text-align: center;
+  color: white;
+}
+.header h1 {
+  font-size: 40px;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #010E25;
+}
+nav li {
+    float: left;
+}
+nav li a, .dropMenu {
+    display: inline-block;
+    color: #17A952;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover, .dropdown:hover .dropMenu {
+    background-color: #2ECAFF;
+    border-radius: 16px;
+}
+li.dropdown {
+    display: inline-block;
+}
+.dropDownMenu {
+    display: none;
+    position: absolute;
+    background-color: #010E25;
+	  color:#808080;
+	  border-style: double;
+    border-radius: 16px;
+	  border-color: #17A952;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px #010E25;
+}
+.dropDownMenu a {
+    color: #17A952;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropDownMenu a:hover {background-color: #010E25;
+color:#2ECAFF;
+}
+.dropdown:hover .dropDownMenu {
+    display: block;
+	color:#FFFFFF;
+}
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.side {
+  -ms-flex: 30%;
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+.main {
+  -ms-flex: 70%;
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #f1f1f1;
+}
+
+/*For non-computer devices */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
