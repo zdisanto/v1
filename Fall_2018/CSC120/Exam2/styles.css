@@ -1,0 +1,21 @@
+#formData{
+	position: absolute;
+	border-style: solid;
+	left: 25%;
+	top:30%;
+	width:30%;
+	background-color:#69AB68;
+	box-shadow:10px 10px 5px #888888;
+	padding:10px;
+}
+
+.tb{
+	position:absolute;
+	left:40%;
+}
+
+li{margin:5px;}
+
+ul{list-style:none;}
+
+#rqd{color:red;}
