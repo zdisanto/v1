@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ISC 220 IRS 2.0</title>
+	<script src="Mike_Pence.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+<!-- Last 5 Docs -->
+</head>
+<body>
+	<!--Highlighting-->
+<script>
+    function hilight(Query) { 
+        document.getElementById('hid_search_text').value = Query; 
+        document.designMode = "on"; 
+        var sel = window.getSelection(); 
+        sel.collapse(document.body, 0);
+        while (window.find(Query)) { 
+            document.execCommand("HiliteColor", false, "yellow"); 
+            sel.collapseToEnd(); 
+        }
+        document.designMode = "off";
+        goTop(Query,1); 
+    }
+
+    function removeHiLight() { 
+        var Query = document.getElementById('hid_search_text').value; 
+        document.designMode = "on"; 
+        var sel = window.getSelection(); 
+        sel.collapse(document.body, 0);
+        while (window.find(Query)) { 
+            document.execCommand("HiliteColor", false, "transparent"); 
+            sel.collapseToEnd(); 
+        }
+        document.designMode = "off"; 
+        goTop(Query,0); 
+    }
+
+    function goTop(Query,findFirst) { 
+        if(window.document.location.href = '#') { 
+            if(findFirst) { 
+                window.find(Query, 0, 0, 1);
+            }
+        }
+    }
+    </script>
+
+    <style>
+    #search_para {
+     color:grey;
+    }
+    .highlight {
+     background-color: #FF6; 
+    }
+    </style>
+
+	<!--SearchBar with Spell Check and Able to Sort Through Docments-->
+		<div id="wrapper">
+  		<input type="text" id="search_text" name="search_text"> &nbsp; 
+        <input type="hidden" id="hid_search_text" name="hid_search_text"> 
+		</div>
+
+	<!--CheckBoxes for Seperate Word and Case Sensitive Searches-->
+	<form id="myform" name="theform">
+	  <input type="checkbox" name="seperate" value="Seperate"> Seperate Word Search<br>
+	  <input type="checkbox" name="case" value="Case"> Case Sensitive<br>
+	<table cellspacing="10">
+  		</td>
+  		<!--K-Gram Options-->
+   		<td><label for="reference">K-Gram:</label>
+				<select name="reference" id="reference">
+					<option>Choose One</option>
+					<option value="#">Bi-Gram</option>
+					<option value="#">Tri-Gram</option>
+               		<option value="#">Tetra-Gram</option>
+               		<option value="#">Penta-Gram</option>
+				</select>
+   		</td></tr>
+   		<textarea rows="4" cols="37">K-Grammed Document will appear here...</textarea>
+   		<!--Document Selector-->
+   		<td><label for="reference">More Documents:</label>
+				<select name="reference" id="reference">
+					<option>Choose One</option>
+					<option value="IRS2_0.html">Show All Ten</option>
+					<option value="IRS2_1.html">Show First Five</option>
+					<option value="IRS2_2.html">Show Last Five</option>
+				</select>
+   		</td></tr>
+   	</table>
+   	</form>
+   		<!--Submit and Reset Buttons-->
+		<div id="wrapper">
+        <input type="button" value="search" id="search" onclick="hilight(document.getElementById('search_text').value)" >  &nbsp; 
+        <input type="button" value="remove" id="remove" onclick="removeHiLight()">  &nbsp; 
+    	</div>
+
+		<p>Document #:</p>
+	<!--List of Docments-->
+	<ol id='list'>
+   	<li class="documents"> And then there was this Korean orphan that the class adopted through the Help the Children program, all the kids brought in a quarter a month, that was the idea. It was an unfortunate thing, the kid’s name was Kim and maybe we adopted him too late or something. The cause of death was not stated in the letter we got, they suggested we adopt another child instead and sent us some interesting case histories, but we didn’t have the heart. The class took it pretty hard, they began (I think, nobody ever said anything to me directly) to feel that maybe there was something wrong with the school. But I don’t think there’s anything wrong with the school, particularly, I’ve seen better and I’ve seen worse. It was just a run of bad luck. We had an extraordinary number of parents passing away, for instance. There were I think two heart attacks and two suicides, one drowning, and four killed together in a car accident. One stroke. And we had the usual heavy mortality rate among the grandparents, or maybe it was heavier this year, it seemed so. And finally the tragedy. </li>
+   	<li class="documents"> The tragedy occurred when Matthew Wein and Tony Mavrogordo were playing over where they’re excavating for the new federal office building. There were all these big wooden beams stacked, you know, at the edge of the excavation. There’s a court case coming out of that, the parents are claiming that the beams were poorly stacked. I don’t know what’s true and what’s not. It’s been a strange year. I forgot to mention Billy Brandt’s father who was knifed fatally when he grappled with a masked intruder in his home. </li>
+   	<li class="documents"> One day, we had a discussion in class. They asked me, where did they go? The trees, the salamander, the tropical fish, Edgar, the poppas and mommas, Matthew and Tony, where did they go? And I said, I don’t know, I don’t know. And they said, who knows? and I said, nobody knows. And they said, is death that which gives meaning to life? And I said no, life is that which gives meaning to life. Then they said, but isn’t death, considered as a fundamental datum, the means by which the taken-for-granted mundanity of the everyday may be transcended in the direction of – I said, yes, maybe. They said, we don’t like it. I said, that’s sound. They said, it’s a bloody shame! I said, it is. They said, will you make love now with Helen (our teaching assistant) so that we can see how it is done? We know you like Helen. I do like Helen but I said that I would not. We’ve heard so much about it, they said, but we’ve never seen it. I said I would be fired and that it was never, or almost never, done as a demonstration. Helen looked out the window. </li>
+   	<li class="documents"> They said, please, please make love with Helen, we require an assertion of value, we are frightened. </li>
+   	<li class="documents"> I said that they shouldn’t be frightened (although I am often frightened) and that there was value everywhere. Helen came and embraced me. I kissed her a few times on the brow. We held each other. The children were excited. Then there was a knock on the door, I opened the door, and the new gerbil walked in. The children cheered wildly. </li>
+   </ol>
+	</form>
+</body>
+</html>
+

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ISC 220 Info. Reterval System</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="Mike_Pence.js"></script>
+</head>
+<body>
+
+<!-- hilitor code taken from https://www.the-art-of-web.com/javascript/search-highlight/ 
+	
+	<div id="playground">
+
+	<form>
+	<p>Highlight keywords as you type: <input id="keywords" size="24"></p>
+	</form>
+
+	</div>
+
+	<script src="hilitor.js"></script>
+	<script>
+
+	  window.addEventListener("DOMContentLoaded", function(e) {
+	    var myHilitor2 = new Hilitor("playground");
+	    myHilitor2.setMatchType("left");
+	    document.getElementById("keywords").addEventListener("keyup", function(e) {
+	      myHilitor2.apply(this.value);
+	    }, false);
+	  }, false);
+
+	</script>
+
+END -->
+
+
+	<!--Favicon Image-->
+	<link rel="shortcut icon" href="dad.png" type="image/x-icon">
+    
+
+	<!-- Search Bar --> 
+	<p>Search word(s) through documents:</p>
+	<input id="searchbar" onkeyup="procBar()" type="text" placeholder="Search a Term"/> 
+
+	<!-- Doc 1 -->
+	<ol id='list'>
+	<li class="documents"><center><h1><b><i> Mike's Story </i></b></h1></center></li>
+	<li class="documents"><center><p><b> 46th President of the United States </b></p></center></li>
+	
+	<li class="documents"> A former U.S. congressman and governor for the state of Indiana, President Mike Pence is proud to serve the white and Christian population of America for more than two decades. </li>
+	<li class="documents"> Born in Columbus, Indiana, on June 7, 1959, to wholesome heterosexual couple Edward and Nancy Pence, Michael Richard Pence was named after his grandfather Richard, who emigrated to America from the non-Muslim-majority country of Ireland, settling with his family in the American Midwest. </li>
+	<li class="documents"> Growing up in small town Indiana, Pence witnessed the American Dream firsthand as his hardworking opposite-sex parents built what he refers to as the “American Dream Big 3” -- a big family, a big chain of local convenience stores, and a family name synonymous with a big chain of local convenience stores. </li>
+	<li class="documents"> His idyllic American childhood was disrupted, however, when as a high school student Pence supported the Democratic party and voted for Jimmy Carter -- a decision he attributes less to loose political and moral convictions than to teenage immaturity and “the magnetic, almost sexual pull a charismatic figure such as Jimmy Carter had on teenagers of the 70s.” </li>
+	<li class="documents"> But the self-described “former Carter bitch” would soon shed his democratic feathers at liberal arts college in Hanover, Indiana, where he joined the Phi Gamma Delta fraternity and declared himself a born-again Evangelical Christian. Of his time in undergraduate school, Pence has said “Joining an exclusive group of white men and becoming progressively conservative prepared me enormously for my role as President.” </li>
+	<li class="documents"> Pence went on to earn a law degree at Indiana University, where he formed a healthy and natural heterosexual attraction to the female woman Karen Pence. In 2002 Pence stated in an interview that he declines to eat dinner or attend drinking functions without his wife present, although “I’m fine with [Karen] going out drinking with however many dudes she wants, I don’t get jealous like that.” </li>
+	<li class="documents"> Armed with a newly-minted legal degree and public-radio-host-good-looks, Pence launched a radio program, The Mike Pence Show, which was syndicated in 18 stations across Indiana -- WOW! -- and enabled him to connect with a broad, state-wide fan base. It was during this era that the future President established himself as a serious and respected voice in politics by exposing Mulan, a Disney animated film with a talking dragon, as malicious liberal propaganda. </li>
+	<li class="documents"> “Public broadcasting is important and I hope that the President of the United States will never do anything to defund it, and if he does, I will be very angry and try to stop him, due to my own personal history in public broadcasting,” Pence said at the time. </li>
+	<li class="documents"> Exposing Disney’s Mulan soon emboldened Pence, then a heterosexual father- of-three with a hit public radio show under his belt, to run for congressional office in Indiana. With chants of “Pence for Congress,” “Boycott Mulan,” and “I Still Don’t Quite Understand Why We Are Boycotting Mulan,” Pence was elected to the US House of Representatives in 2000. </li>
+	<li class="documents"> Over the next 12 years, Pence would serve six more terms in Congress and advocate for the strong set of values he had come to hold over the years, which he listed as “America, Family, Respect, Heterosexual, Self-Determination, Radio, Religious Freedom, Bible, Constitution, and No-Mulan.” </li>
+	<li class="documents"> Those values earned him the respect of his colleagues in Washington and at home in the Hoosier state, which in 2013 called him back home to serve as the 50th Governor of Indiana. In his new role, Pence got to work on a broad-reaching legislative agenda that included lowering individual tax rates, lowering business property tax rates, lowering corporate tax rates, lowering heterosexual tax rates, and lowering the tax rate on inheritances. </li>
+	<li class="documents"> Envious constituents around the country leered in slack-jawed jealousy at the tax-less Utopia which was now the state of Indiana. The message was clear: It was time to serve Hoosiers not only in the state of Indiana, but Hoosiers across the nation as well. </li>
+	<li class="documents"> With a political toolbelt equipped with a liberal arts education, legal degree, public radio show, a decade of public service, and strong family values like Bible and No-Mulan, Pence was ready to join Republican Presidential nominee and fellow heterosexual Donald Trump on the 2016 GOP ticket. </li>
+	<li class="documents"> With the resignation of President Trump now in the past, Pence is excited to look toward the future as the 46th President of the United States of America. </li>
+	<li class="documents"> President Mike Pence remains grateful for his faith, the love and support of his family, Indiana public radio, Hoosiers the people, Hoosiers the Movie, former President Jimmy Carter, his brothers at Phi Gamma Delta, the convenience of local convenience stores, Shan Yu the ruthless king of the Huns in Mulan who tried to kill Mulan, and the blessings of tax cuts which are the birthright of every wealthy American. </li>
+
+	<!-- Doc 2 -->
+	<li class="documents"><center><h1><b><i> What I Ate </i></b></h1></center></li>
+	<li class="documents"><center><p><b> 46th President of the United States </b></p></center></li>
+	<li class="documents"><h2><b> Friday </b></h2></li>
+	<li class="documents"><h3><b> Breakfast </b></h3></li>
+		<li class="documents"> 3 Egg Whites with Mayonnaise Vinaigrette </li>
+		<li class="documents"> 4 Hard Boiled Eggs </li>
+		<li class="documents"> Unbuttered White Toast </li>
+		<li class="documents"> Corn Smoothie </li>
+	<li class="documents"><h3><b> Lunch </b></h3></li>
+		<li class="documents"> Turkey & Swiss Sandwich on White (Cut in 3 sections) </li>
+		<li class="documents"> No Lettuce, No Tomatoes, Extra Mayo </li>
+	<li class="documents"><h3><b> Snack </b></h3></li>
+		<li class="documents"> 14 Peanuts </li>
+	<li class="documents"><h3><b> Dinner </b></h3></li>
+		<li class="documents"> Dinosaur Nuggets </li>
+		<li class="documents"> Mother's Spaghetti </li>
+		<li class="documents"> Tall Glass Of Milk </li>
+	<li class="documents"><h3><b> Late Night Snack </b></h3></li>
+		<li class="documents"> 14 Peanuts </li>
+	
+	<li class="documents"><h2><b> Thursday </b></h2></li>
+	<li class="documents"><h3><b> Breakfast </b></h3></li>
+		<li class="documents"> 3 Loose Handfuls Of Cheerios </li>
+		<li class="documents"> Pot Of Coffee </li>
+	<li class="documents"><h3><b> Lunch </b></h3></li>
+		<li class="documents"> Turkey & Swiss Sandwich on White (Cut in 4 sections) </li>
+		<li class="documents"> No Lettuce, No Tomatoes, Mayo on the Outside </li>
+		<li class="documents"> 2 Scoops Of Great Grammy Jean's Ham Salad </li>
+	<li class="documents"><h3><b> Snack </b></h3></li>
+		<li class="documents"> One Bite of Granny Smith Apple </li>
+		<li class="documents"> 3/4 jars of JIF Peanut Butter (Creamy) </li>
+	<li class="documents"><h3><b> Dinner </b></h3></li>
+		<li class="documents"> Roast Turkey with Salt (No Pepper) </li>
+		<li class="documents"> Mashed Potatoes and Ketchup </li>
+		<li class="documents"> 4 Ears of Corn </li>
+		<li class="documents"> Shot of Beer </li>
+	<li class="documents"><h3><b> Late Night Snack </b></h3></li>
+		<li class="documents"> 6 Ears of Corn </li>
+
+	<li class="documents"><h2><b> Wednesday </b></h2></li>
+	<li class="documents"><h3><b> Breakfast </b></h3></li>
+		<li class="documents"> 6 Hash Browns (McDonald's) </li>
+		<li class="documents"> 2 Medium Vanilla Shakes (McDonald's) </li>
+		<li class="documents"> 2 Large Orange Juice (McDonald's) </li>
+	<li class="documents"><h5><b> EDITOR'S NOTE: I DON'T NORMALLY EAT SIX HASH BROWNS FOR BREAKFAST, BUT AFTER FINDING OUT THAT MY BREAKFAST MEETING WAS WITH A NON-RELATIVE FEMALE, I HAD TO ABRUPTLY CANCEL AND HEAD BACK TO THE WHITE HOUSE FOR A BRIEFING ON RUSSIA STUFF. </b></h5></li>
+	<li class="documents"><h3><b> Lunch </b></h3></li>
+		<li class="documents"> 1/2 lb Loose Turkey (non-spicy) </li>
+		<li class="documents"> 2 Cups Mayo For Dipping </li>
+		<li class="documents"> Head of Lettuce (Non-Shredded) </li>
+	<li class="documents"><h3><b> Snack </b></h3></li>
+		<li class="documents"> 3 Swedish Meatballs </li>
+		<li class="documents"> 3 Non-Swedish Meatballs </li>
+	<li class="documents"><h3><b> Dinner </b></h3></li>
+		<li class="documents"> 2 lbs Loose Turkey (extra non-spicy) </li>
+		<li class="documents"> 4 Deep Fried Corn Balls </li>
+		<li class="documents"> 1/2 Turkey Sandwich - american cheese, coleslaw, mustard and relish </li>
+		<li class="documents"> Corn Seltzer </li>
+	<li class="documents"><h3><b> Late Night Snack </b></h3></li>
+		<li class="documents"> Ketchup Popsicle </li>
+
+	<li class="documents"><h2><b> Tuesday </b></h2></li>
+	<li class="documents"><h3><b> Breakfast </b></h3></li>
+		<li class="documents"> N/A </li>
+	<li class="documents"><h3><b> Lunch </b></h3></li>
+		<li class="documents"> N/A </li>
+	<li class="documents"><h3><b> Snack </b></h3></li>
+		<li class="documents"> N/A </li>
+	<li class="documents"><h5><b> EDITOR'S NOTE: MOTHER AND I HAD THE RUMBLIES IN THE MORNING, SO WE ENDED UP SLEEPING IN OUR BEDS FOR MOST OF THE DAY. </b></h5></li>
+	<li class="documents"><h3><b> Dinner </b></h3></li>
+		<li class="documents"> Turkey & Swiss Sandwich on White (Cut in three sections) </li>
+		<li class="documents"> No Lettuce, No Tomatoes, Extra Mayo </li>
+	<li class="documents"><h3><b> Late Night Snack </b></h3></li>
+		<li class="documents"> N/A </li>
+	<li class="documents"><h5><b> (MOTHER SAID NO AGAIN ON ACCOUNT OF THE RUMBLIES) </b></h5></li>
+	
+	<li class="documents"><h2><b> Monday </b></h2></li>
+	<li class="documents"><h3><b> Breakfast </b></h3></li>
+		<li class="documents"> 1 three-egg omelette with spinach </li>
+		<li class="documents"> 2 four-egg omelettes with double spinach </li>
+		<li class="documents"> 12 oz. of Steam </li>
+	<li class="documents"><h3><b> Lunch </b></h3></li>
+		<li class="documents"> Turkey Pita with Corn 3 Ways (fried, boiled, pureed) </li>
+		<li class="documents"> 2 oz. bag of Flamin Hot Cheetos (plain) </li>
+		<li class="documents"> 3 Diet Dr. Peppers </li>
+	<li class="documents"><h3><b> Snack </b></h3></li>
+		<li class="documents"> 83 Grapes </li>
+	<li class="documents"><h3><b> Dinner </b></h3></li>
+		<li class="documents"> Beef 'n Cheddar (Arby's) </li>
+		<li class="documents"> Large Curly Fries (Arby's) </li>
+		<li class="documents"> Large Jamocha Shake (Arby's) </li>
+	<li class="documents"><h3><b> Late Night Snack </b></h3></li>
+		<li class="documents"> 3 Slices White Bread </li>
+		<li class="documents"> Tall Glass Of Whole Milk </li>
+		<li class="documents"> 1 Bottle Of NyQuil </li>
+
+	<!-- Doc 3 -->
+	<li class="documents"><center><h1><b><i> Mike Facts </i></b></h1></center></li>
+	<li class="documents"><p><b> 46th President of the United States </b></p></li>
+		<li class="documents"> Mike Pence went to college. </li>
+		<li class="documents"> Mike Pence won 3rd prize in the 1972 Indiana Junior Corn Contest. </li>
+		<li class="documents"> Mike Pence likes to watch movies. </li>
+		<li class="documents"> Mike Pence carries a tri-fold wallet in his right back pocket. </li>
+		<li class="documents"> Mike Pence has won seven (7) penmanship awards. </li>
+		<li class="documents"> Mike Pence has a “Family RV” a “Personal RV” and a “Permanent RV” aka his house. </li>
+		<li class="documents"> As a young adult, Mike Pence voted for Jimmy Carter after a catchphrase he coined, “I’m a Carter Supparter,” went semi-viral. </li>
+		<li class="documents"> Mike’s favorite part of the American flag is the bars. </li>
+		<li class="documents"> Mike Pence played baseball in high school until he suffered blunt trauma to his right testicle when a baseball hit it, rupturing the protective covering surrounding the right testicle as well as a contusion to the major blood vessel that, of course, resulted in massive bleeding and prolonged bruising that forced paramedics to cut through his baseball pants in the middle of a junior varsity game against high school rival Glen Oaks high school. All the girls at Mike’s high school were there and saw his bleeding bruised testicle and ruptured genitals. He played second base. </li>
+		<li class="documents"> Mike’s favorite type of technology is radio. </li>
+		<li class="documents"> Mike’s favorite late night snack is unleavened bread. </li>
+		<li class="documents"> Mike Pence can play all of “Joker” by Steve Miller Band on guitar except the slide part after “Some people call me Maurice." </li>
+
+	<!-- Doc 4 -->
+	<li class="documents"><center><h1><b><i> Mother May I </i></b></h1></center></li>
+	<li class="documents"><center><p><b> Mike’s wife, Karen, answers questions from the community. </b></p></center></li>
+	<li class="documents"><p> Dear Mother, <br>
+		For many years I’ve slept in my comfortable pajamas--they zip from head to toe and are made of the softest red flannel. They were lovingly made for me on my nineteenth birthday by my dearly departed grandmother. Unfortunately, I’ve been suffering from some nightmare-induced cold sweats which have disintegrated the delicate fabric. I know my mother (wife) loves snuggling up to me when I’m wearing these P.J.s. I have to say I’ll miss our nights of hot chocolate and bible verse recitations in bed. Mother may I...buy a new pair of pajamas? <br>
+	Sincerely, <br>
+	<i>M.P. in D.C.</i> </p> <br></li>
+	<li class="documents"><p> Dear M.P., <br>
+		Well, you are a VERY lucky young man to have such a wonderful grandmother who made you a snuggly sleepsuit! And your wife is a VERY lucky young woman to have a flannel-swathed mate. Unfortunately, holes in pajamas can result in unintended glimpses of the human body, which lead to naughty nighttime behavior. For your wife’s sake and your own, find a new more modest solution to your sleepwear situation--ideally one cut from thick fabric and sewed tightly at the seams. <br>
+	Love, <br>
+	<i>Mother </i></p> <br></li>
+
+	<li class="documents"><p> Dear Mother, <br>
+		For many years, I worked with a man who had a troubling relationship with his wife. He treated her like an object, bragged about how long he knew her, and it seemed like she was genuinely afraid of him. I stood by this man because he helped my career and now sometimes I can’t finish my mashed potatoes because I feel bad. Mother may I...forgive myself? <br>
+	Sincerely, <br>
+	<i>Indy Mikey </i></p> <br></li>
+	<li class="documents"><p> Dear Indy Mikey, <br>
+		I beg you to remember: God invented wives to glorify their husbands! They are beautiful baby-houses sent to this earth to bring forth a new generation of heavenly victors (male) and breeders (female). If this man treated his wife like an object it was surely because he understood that was the best use for her, and we cannot question our Lord who vested him with that wisdom. Rest easy. You WILL go to heaven and you MAY forgive yourself. <br>
+	Love, <br>
+	<i>Mother </i></p> <br></li>
+
+	<li class="documents"><p> Dear Mother, <br>
+		Recently I had the opportunity to hire a large amount of government workers. I try to remember that as someone in a position of power, I lead God’s army. Unfortunately, mired in the paperwork of my new position, I accidentally approved the employment of a known homosexual. This man is so good at his job I accidentally overlooked his sexuality in the hiring process. The thought that I am paying an admitted sodomite chills me to the bone. Even throwing a football around the White House Rose Garden--I meant the lawn--isn’t fun anymore. My wife says if I do not fire this person I will go to hell. Mother may I...fire this deviant? <br>
+	Sincerely, <br>
+	<i><strike>Mike Pence</strike> Mark Parts </i></p> <br></li>
+	<li class="documents"><p> Dear <strike>Mike Pence</strike> Mark Parts, <br>
+		If you want to find eternal bliss, you must fire this person. Not only are they infecting God’s earth in their spare time with their unacceptable behavior, but they are poisoning the saintly environment you are so carefully constructing. We are taught to love the sinner and hate the sin, but homosexuality is a dangerous choice made to taunt godly people. Reject it, and give this pinko the pink slip. <br>
+	Love, <br>
+	<i>Mother </i></p> <br></li>
+
+	<li class="documents"><p> Dear Mother, <br>
+		Mother May I...eat alone with a woman who’s not my wife? <br>
+	Sincerely, <br>
+	<i>President Mike Penc--A President of Something </i></p> <br></li>
+	<li class="documents"><p> Dear President Mike Penc--A President of Something, <br>
+		No. <br>
+	Love, <br>
+	<i>Mother </i></p> <br></li>
+
+	<!-- Doc 5 -->
+	<li class="documents"><center><h1><b><i> The Issues </i></b></h1></center></li>
+	<li class="documents"><p><b> 46th President of the United States </b></p></li>
+	<li class="documents"><h2><b> "CORN IS OUR COUNTRY.
+	AND OUR COUNTRY IS CORN." </b></h2>
+	<h5> -PRESIDENT MIKE PENCE </h5></li>
+	<li class="documents"><h3><b> WHAT PRESIDENT PENCE BELIEVES IN </b></h3></li>
+		<li class="documents"><iframe height="380" width="500" src="https://www.youtube.com/embed/jP6TrkkE3fY" frameborder="0" allowfullscreen></iframe></li>
+	<li class="documents"><h3><b> WHERE OUR PROUD NATION IS HEADED </b></h3></li>
+		<li class="documents"><iframe height="380" width="500" src="https://www.youtube.com/embed/5PoPxr4ilKM" frameborder="0" allowfullscreen></iframe></li>
+
+	<!-- Footer -->
+	<li class="documents"><h4><b> This is a reminder to kill all your tiny dogs </b></h4></li>
+	<li class="documents"><p> Sign up to receive email notifications regarding best ways to do so, including strangling, drowning, and others. </p></li>
+	<li class="documents"><p> Paid For By The People For Mike Pence </p></li>
+	<li class="documents"><p> If you are looking for the attractive body builder named Mike Pence, click here. </p></li>
+	<li class="documents"><p> COMING SOON: Russian Translation </p></center></li>
+	
+	</ol>
+
+</body>
+</html>
+
+
+
