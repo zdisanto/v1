@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>testBF.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #808080; font-style: italic;}
+.s3 { color: #0000ff;}
+.s4 { color: #008000; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+testBF.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>balloonpeople;
+
+<span class="s0">import </span>painter.SPainter;
+<span class="s0">import </span>javax.swing.SwingUtilities;
+
+<span class="s0">public class </span>testBF {
+        <span class="s0">public </span>testBF() {
+            <span class="s2">// Create some BalloonPerson instances to test with!</span>
+            BalloonFamily family = <span class="s0">new </span>BalloonFamily(<span class="s3">3</span>);
+            SPainter painter = <span class="s0">new </span>SPainter(<span class="s4">&quot;Balloon Family Tester&quot;</span>, <span class="s3">1200</span>, <span class="s3">1200</span>);
+            family.paint(painter);
+            System.out.println(family);
+        }
+
+        <span class="s0">public static void </span>main(String[] args) {
+            SwingUtilities.invokeLater(<span class="s0">new </span>Runnable() {
+                <span class="s0">public void </span>run() {
+                    <span class="s0">new </span>testBF();
+                }
+            });
+        }
+    }</pre>
+</body>
+</html>

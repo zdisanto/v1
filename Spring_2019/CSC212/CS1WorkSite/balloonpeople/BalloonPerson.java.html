@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>BalloonPerson.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #0000ff;}
+.s3 { color: #008000; font-weight: bold;}
+.s4 { color: #808080; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+BalloonPerson.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>balloonpeople;
+
+<span class="s0">import </span>painter.SPainter;
+<span class="s0">import </span>shapes.SCircle;
+<span class="s0">import </span>java.awt.*;
+<span class="s0">import </span>java.util.Random;
+
+<span class="s0">public class </span>BalloonPerson {
+    <span class="s0">private </span>String name;
+    <span class="s0">private int </span>age;
+    <span class="s0">private double </span>height;
+    <span class="s0">private double </span>headSize = <span class="s2">50</span>;
+    <span class="s0">private double </span>shrinkFactor = <span class="s2">1.5</span>;
+    <span class="s0">private </span>SCircle base = <span class="s0">new </span>SCircle(headSize);
+
+
+    <span class="s0">public </span>BalloonPerson(String name, <span class="s0">int </span>age, <span class="s0">double </span>height) {
+        <span class="s0">this</span>.name = name;
+        <span class="s0">this</span>.age = age;
+        <span class="s0">this</span>.height = height;
+    }
+
+    <span class="s0">public </span>String toString() {
+        <span class="s0">return </span><span class="s3">&quot; Name: &quot; </span>+ name + <span class="s3">&quot; Age: &quot; </span>+ age + <span class="s3">&quot; Height: &quot; </span>+ height + <span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">&quot;</span>;
+    }
+
+    <span class="s0">public void </span>paintPerson(SPainter painter) {
+        randomColor(painter);
+        head(painter);
+        neckDown(painter);
+        legs(painter);
+    }
+
+    <span class="s0">private void </span>legs(SPainter painter) {
+        painter.mbk(base.radius() + (height * <span class="s2">1</span>/<span class="s2">2</span>));
+        <span class="s4">//Legs (r)</span>
+        painter.mrt(<span class="s2">.2</span>*base.radius());
+        painter.mrt(<span class="s2">.2</span>*base.radius());
+        painter.mrt(<span class="s2">.2</span>*base.radius());
+        painter.mrt(<span class="s2">.2</span>*base.radius());
+        painter.paint(base);
+        painter.mlt(<span class="s2">.2</span>*base.radius());
+        painter.mlt(<span class="s2">.2</span>*base.radius());
+        painter.mlt(<span class="s2">.2</span>*base.radius());
+        painter.mlt(<span class="s2">.2</span>*base.radius());
+        <span class="s4">// (l)</span>
+        painter.mlt(<span class="s2">.2</span>*base.radius());
+        painter.mlt(<span class="s2">.2</span>*base.radius());
+        painter.mlt(<span class="s2">.2</span>*base.radius());
+        painter.mlt(<span class="s2">.2</span>*base.radius());
+        painter.paint(base);
+        painter.mrt(<span class="s2">.2</span>*base.radius());
+        painter.mrt(<span class="s2">.2</span>*base.radius());
+        painter.mrt(<span class="s2">.2</span>*base.radius());
+        painter.mrt(<span class="s2">.2</span>*base.radius());
+
+        <span class="s4">//Move to Center</span>
+        painter.mfd(base.radius() + (height * <span class="s2">1</span>/<span class="s2">2</span>));
+        painter.mfd(base.radius() + (height * <span class="s2">1</span>/<span class="s2">2</span>));
+    }
+
+    <span class="s0">private void </span>neckDown(SPainter painter) {
+        <span class="s4">//Body</span>
+        painter.mbk(base.radius() + (height * <span class="s2">2</span>/<span class="s2">3</span>));
+        base.shrink(headSize / shrinkFactor);
+        painter.paint(base);
+
+        <span class="s4">//Arms (r)</span>
+        base.expand(height / (shrinkFactor * shrinkFactor));
+        painter.mrt(base.diameter());
+        painter.paint(base);
+        painter.mlt(base.diameter());
+        <span class="s4">//(l)</span>
+        painter.mlt(base.diameter());
+        painter.paint(base);
+        painter.mrt(base.diameter());
+    }
+
+    <span class="s0">private void </span>head(SPainter painter) {
+        <span class="s4">//Head</span>
+        painter.paint(base);
+
+    }
+    <span class="s0">private void </span>randomColor(SPainter painter) {
+        Random rgen = <span class="s0">new </span>Random();
+        <span class="s0">int </span>r = rgen.nextInt(<span class="s2">255</span>);
+        <span class="s0">int </span>g = rgen.nextInt(<span class="s2">255</span>);
+        <span class="s0">int </span>b = rgen.nextInt(<span class="s2">255</span>);
+        painter.setColor(<span class="s0">new </span>Color(r, g, b));
+    }
+    <span class="s0">public void </span>increment(SPainter painter) {
+        painter.mrt(base.diameter()*<span class="s2">4</span>);
+    }
+}
+</pre>
+</body>
+</html>

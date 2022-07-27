@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>BalloonFamily.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #0000ff;}
+.s3 { color: #008000; font-weight: bold;}
+.s4 { color: #808080; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+BalloonFamily.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>balloonpeople;
+
+<span class="s0">import </span>painter.SPainter;
+<span class="s0">import </span>java.util.ArrayList;
+<span class="s0">import </span>javax.swing.*;
+<span class="s0">import </span>java.awt.geom.Point2D;
+<span class="s0">import </span>java.util.Scanner;
+
+<span class="s0">public class </span>BalloonFamily {
+    <span class="s0">private </span>ArrayList&lt;BalloonPerson&gt; people;
+
+    <span class="s0">public </span>BalloonFamily( <span class="s0">int </span>numberOfPeople) {
+        <span class="s0">this</span>.people = <span class="s0">new </span>ArrayList&lt;&gt;(numberOfPeople);
+
+        <span class="s0">for </span>(<span class="s0">int </span>i = <span class="s2">0</span>; i &lt; numberOfPeople; i ++) {
+            String name = getString(<span class="s3">&quot;Name of Family Member &quot; </span>+ ( i + <span class="s2">1</span>) );
+            <span class="s0">int </span>age = getNumber(<span class="s3">&quot;Age of Family Member&quot; </span>+ (i + <span class="s2">1</span>));
+            <span class="s0">double </span>height = getDouble(<span class="s3">&quot;Height of Family Member(in inches)&quot; </span>+ (i + <span class="s2">1</span>));
+            people.add(<span class="s0">new </span>BalloonPerson(name, age, height));
+        }
+    }
+    <span class="s0">public void </span>paint(SPainter painter) {
+        <span class="s4">//Starting Position</span>
+        <span class="s0">int </span>startingX = <span class="s2">200</span>;
+        <span class="s0">int </span>startingY = <span class="s2">200</span>;
+        painter.moveTo(<span class="s0">new </span>Point2D.Double(startingX, startingY));
+        <span class="s0">for </span>(<span class="s0">int </span>i = <span class="s2">0</span>; i &lt; people.size(); i++) {
+            people.get(i).paintPerson(painter);
+            people.get(i).increment(painter);
+        }
+    }
+
+    <span class="s0">private double </span>getDouble(String prompt) {
+        String nss = JOptionPane.showInputDialog(<span class="s0">null</span>, prompt + <span class="s3">&quot;?&quot;</span>);
+        Scanner scanner = <span class="s0">new </span>Scanner(nss);
+        <span class="s0">return </span>scanner.nextDouble();
+    }
+
+    <span class="s0">private int </span>getNumber(String prompt) {
+        String nss = JOptionPane.showInputDialog(<span class="s0">null</span>, prompt + <span class="s3">&quot;?&quot;</span>);
+        Scanner scanner = <span class="s0">new </span>Scanner(nss);
+        <span class="s0">return </span>scanner.nextInt();
+    }
+
+    <span class="s0">private </span>String getString(String prompt) {
+        String nss = JOptionPane.showInputDialog(<span class="s0">null</span>, prompt + <span class="s3">&quot;?&quot;</span>);
+        Scanner scanner = <span class="s0">new </span>Scanner(nss);
+        <span class="s0">return </span>scanner.next();
+    }
+
+    <span class="s0">public </span>String toString() {
+        StringBuilder returnString = <span class="s0">new </span>StringBuilder();
+
+        <span class="s0">for </span>(<span class="s0">int </span>i = <span class="s2">0</span>; i &lt; people.size(); i++) {
+            returnString.append(people.get(i));
+        }
+        <span class="s0">return </span>returnString.toString();
+    }
+}
+</pre>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>Roller.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080; font-style: italic;}
+.s1 { color: #000000;}
+.s2 { color: #000080; font-weight: bold;}
+.s3 { color: #0000ff;}
+.s4 { color: #008000; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Roller.java</font>
+</center></td></tr></table>
+<pre><span class="s0">/* 
+ *Program to make use of the Die class. 
+ */</span>
+
+<span class="s2">package </span>chanceapps;
+
+<span class="s2">import </span>chance.Die;
+
+<span class="s2">public class </span>Roller {
+    <span class="s2">public static void </span>main(String[] args) {
+        <span class="s0">//CREATE A STANDARD DIE AND ROLL IT 5 TIMES</span>
+        createAndRollStandardDieFiveTimes();
+        <span class="s0">//CREATE A TWENTY SIDED DIE AND ROLL IT 5 TIMES</span>
+        createAndRollTwentySidedDieFiveTimes();
+        <span class="s0">//CREATE A STANDARD DIE AND ROLL IT 20 TIMES</span>
+        createAndRollStandardDie(<span class="s3">20</span>);
+        <span class="s0">//CREATE A STANDARD DIE AND ROLL IT 30 TIMES</span>
+        createAndRollStandardDie(<span class="s3">30</span>);
+        <span class="s0">//CREATE A NINE SIDED DIE AND ROLL IT 20 TIMES</span>
+        createAndRollNineSidedDie(<span class="s3">20</span>);
+        <span class="s0">//CREATE A NINE SIDED DIE AND ROLL IT 30 TIMES</span>
+        createAndRollNineSidedDie(<span class="s3">30</span>);
+
+        <span class="s0">//TEN TIMES, CREATE A STANDARD DIE AND ROLL IT UNTIL YOU GET A 1</span>
+        System.out.println(<span class="s4">&quot;Ten times, roll a standard die for a 1.&quot;</span>);
+        <span class="s2">for </span>(<span class="s2">int </span>i = <span class="s3">1</span>; i &lt;= <span class="s3">10</span>; i++) {
+            createAndRollStandardDieFor1();
+        }
+        <span class="s0">//TEN TIMES, CREATE A TWELVE SIDED DIE AND ROLL IT UNTIL YOU GET A 1</span>
+        System.out.println(<span class="s4">&quot;Ten times, roll a twelve sided die for a 1.&quot;</span>);
+        <span class="s2">for </span>(<span class="s2">int </span>i = <span class="s3">1</span>; i &lt;= <span class="s3">10</span>; i++) {
+            createAndRollTwelveSidedDieFor1();
+        }
+    }
+
+    <span class="s2">private static void </span>createAndRollStandardDieFiveTimes() {
+        System.out.println(<span class="s4">&quot;Roll a standard die 5 times...&quot;</span>);
+        Die die = <span class="s2">new </span>Die();
+        die.roll();
+        System.out.print(die.top() + <span class="s4">&quot; &quot;</span>);
+        die.roll();
+        System.out.print(die.top() + <span class="s4">&quot; &quot;</span>);
+        die.roll();
+        System.out.print(die.top() + <span class="s4">&quot; &quot;</span>);
+        die.roll();
+        System.out.print(die.top() + <span class="s4">&quot; &quot;</span>);
+        die.roll();
+        System.out.print(die.top() + <span class="s4">&quot; &quot;</span>);
+        System.out.println();
+    }
+
+    <span class="s2">private static void </span>createAndRollTwentySidedDieFiveTimes() {
+        System.out.println(<span class="s4">&quot;Roll a twenty sided die 5 times...&quot;</span>);
+        Die die = <span class="s2">new </span>Die();
+        die.roll();
+        System.out.print(die.top() + <span class="s4">&quot; &quot;</span>);
+        die.roll();
+        System.out.print(die.top() + <span class="s4">&quot; &quot;</span>);
+        die.roll();
+        System.out.print(die.top() + <span class="s4">&quot; &quot;</span>);
+        die.roll();
+        System.out.print(die.top() + <span class="s4">&quot; &quot;</span>);
+        die.roll();
+        System.out.print(die.top() + <span class="s4">&quot; &quot;</span>);
+        System.out.println();
+    }
+
+    <span class="s2">private static void </span>createAndRollStandardDie(<span class="s2">int </span>nrOfTimes) {
+        System.out.println(<span class="s4">&quot;Roll a standard die &quot; </span>+ nrOfTimes + <span class="s4">&quot; times...&quot;</span>);
+        Die dd = <span class="s2">new </span>Die();
+        <span class="s2">int </span>i = <span class="s3">1</span>;
+        <span class="s2">while </span>(i &lt;= nrOfTimes) {
+            dd.roll();
+            i = i + <span class="s3">1</span>;
+            System.out.print(dd.top() + <span class="s4">&quot; &quot;</span>);
+        }
+        System.out.println();
+    }
+
+    <span class="s2">private static void </span>createAndRollNineSidedDie(<span class="s2">int </span>nrOfTimes) {
+        System.out.println(<span class="s4">&quot;Roll a nine sided die &quot; </span>+ nrOfTimes + <span class="s4">&quot; times...&quot;</span>);
+        Die dd = <span class="s2">new </span>Die();
+        <span class="s2">int </span>i = <span class="s3">1</span>;
+        <span class="s2">while </span>(i &lt;= nrOfTimes) {
+            dd.roll();
+            i = i + <span class="s3">1</span>;
+            System.out.print(dd.top() + <span class="s4">&quot; &quot;</span>);
+        }
+        System.out.println();
+    }
+
+    <span class="s2">private static void </span>createAndRollStandardDieFor1() {
+        Die dd = <span class="s2">new </span>Die();
+        dd.roll();
+        System.out.println(dd.top() + <span class="s4">&quot; &quot;</span>);
+        <span class="s2">while </span>(dd.top() != <span class="s3">1</span>) {
+            dd.roll();
+            System.out.print(dd.top() + <span class="s4">&quot; &quot;</span>);
+        }
+        System.out.println();
+    }
+
+    <span class="s2">private static void </span>createAndRollTwelveSidedDieFor1() {
+        Die dd = <span class="s2">new </span>Die();
+        dd.roll();
+        System.out.print(dd.top() + <span class="s4">&quot; &quot;</span>);
+        <span class="s2">while </span>(dd.top() != <span class="s3">1</span>) {
+            dd.roll();
+            System.out.print(dd.top() + <span class="s4">&quot; &quot;</span>);
+        }
+        System.out.println();
+    }
+}
+</pre>
+</body>
+</html>

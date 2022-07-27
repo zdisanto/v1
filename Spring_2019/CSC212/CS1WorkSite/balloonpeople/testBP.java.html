@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>testBP.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #008000; font-weight: bold;}
+.s3 { color: #0000ff;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+testBP.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>balloonpeople;
+
+<span class="s0">import </span>painter.SPainter;
+<span class="s0">import </span>javax.swing.*;
+<span class="s0">import </span>java.awt.geom.Point2D;
+
+<span class="s0">public class </span>testBP {
+    <span class="s0">public </span>testBP(){
+        SPainter painter = <span class="s0">new </span>SPainter(<span class="s2">&quot;Balloon Person Tester&quot;</span>, <span class="s3">400</span>, <span class="s3">400</span>);
+
+        <span class="s0">int </span>startingX = <span class="s3">200</span>;
+        <span class="s0">int </span>startingY = <span class="s3">200</span>;
+        painter.moveTo(<span class="s0">new </span>Point2D.Double(startingX, startingY));
+
+        BalloonPerson person = <span class="s0">new </span>BalloonPerson(<span class="s2">&quot;Test&quot;</span>,<span class="s3">20</span>, <span class="s3">50</span>);
+        person.paintPerson(painter);
+        System.out.print(person);
+    }
+
+    <span class="s0">public static void </span>main(String[] args) {
+        SwingUtilities.invokeLater(<span class="s0">new </span>Runnable() {
+            <span class="s0">public void </span>run() {
+                <span class="s0">new </span>testBP();
+            }
+        });
+    }
+}
+</pre>
+</body>
+</html>

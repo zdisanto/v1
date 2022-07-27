@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>SurfaceAreaOfCube.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080; font-style: italic;}
+.s1 { color: #000000;}
+.s2 { color: #000080; font-weight: bold;}
+.s3 { color: #008000; font-weight: bold;}
+.s4 { color: #0000ff;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+SurfaceAreaOfCube.java</font>
+</center></td></tr></table>
+<pre><span class="s0">/* Program that features two functions to compute the surface area of a cube. 
+ * - The edge length will be read from the standard input stream. 
+ * - The surface area will be printed to the standard output stream. 
+ * - A face of the cube will be modeled as a simple square. 
+ */</span>
+
+<span class="s2">package </span>mathematics;
+
+<span class="s2">import </span>java.util.Scanner;
+<span class="s2">import </span>shapes.SSquare;
+
+<span class="s2">public class </span>SurfaceAreaOfCube {
+
+    <span class="s2">public static void </span>main(String[] args) {
+        <span class="s2">double </span>edgeLength = edgeLength();
+        <span class="s2">double </span>surfaceArea = surfaceArea(edgeLength);
+        System.out.println(<span class="s3">&quot;surface area = &quot; </span>+ surfaceArea);
+    }
+
+        <span class="s2">private static double </span>edgeLength() {
+        System.out.print(<span class="s3">&quot;Please enter the edge length of the cube: &quot;</span>);
+        Scanner scanner = <span class="s2">new </span>Scanner(System.in);
+        <span class="s2">double </span>edgeLength = scanner.nextDouble();
+        <span class="s2">return </span>edgeLength;
+    }
+
+        <span class="s2">private static double </span>surfaceArea(<span class="s2">double </span>edgeLength) {
+            SSquare face = <span class="s2">new </span>SSquare(edgeLength);
+            <span class="s2">int </span>nrOfFaces = <span class="s4">6</span>;
+            <span class="s2">double </span>surfaceArea = face.area() * nrOfFaces;
+            <span class="s2">return </span>surfaceArea;
+    }
+}</pre>
+</body>
+</html>
