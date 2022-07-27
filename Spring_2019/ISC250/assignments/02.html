@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Assignment 2</title>
+<style type="text/css">
+body {
+  width: 600px;
+  height: 600px;
+  top: 10px;
+  color: black;
+  background: white;
+  border: 1px solid black;
+  margin:  10px 20px 10px 20px;
+  padding: 10px 20px 10px 20px;
+  font-family: "Lucid Sans", Helvetica, sans-serif;
+  line-height: 36px;
+}
+</style>
+<h1>Spanish Flash Cards</h1>
+<p>Welcome to spanish class, here are some sentances to test yourself on:</p>
+<script type="text/javascript">
+  var asked = false;
+  var i = 0;
+  var questions  = new Array();
+  var answers    = new Array();
+      questions[i] = "I love rice and beans.";
+      answers[i]   = "Me encanta arroz y habichuelas.";
+      i++;
+      questions[i] = "Is it time to go to school?";
+      answers[i]   = "Es hora de ir a la escuela?";
+      i++;
+      questions[i] = "Sadly, it's raining.";
+      answers[i]   = "Tristemente, esta lloviendo.";
+      i++;
+      questions[i] = "I miss my family";
+      answers[i]   = "Extrano a mi familia.";
+      i++;
+
+  var currentQuestion = questions.length-1;
+
+  function askQuestion() {
+    currentQuestion = (currentQuestion + 1) % questions.length;
+    var tmp = document.getElementById('answer');
+        tmp.style.visibility = 'hidden';
+        tmp.innerHTML = ""
+        tmp = document.getElementById('question');
+        tmp.style.visibility = 'visible';
+        tmp.innerHTML = questions[currentQuestion];
+        asked = true;
+  }
+  function showAnswer() {
+    if (asked) {
+       var tmp = document.getElementById('answer');
+           tmp.style.visibility = 'visible';
+           tmp.innerHTML = answers[currentQuestion];
+    }
+    asked = false;
+  }
+</script>
+</head>
+<body>
+
+<div>
+<form action="javascript:void(0)">
+<table border="0" cellspacing="0" cellpadding="0">
+
+<button style="width:600; height:100;"
+        name="button1"
+        onclick="askQuestion()"
+>The Question</button>
+
+<button style="width:600; height:100;"
+        name="button2"
+        onclick="showAnswer()"
+>The Answer</button>
+</table>
+
+</form>
+</div>
+
+<div id="question" style="border:1px black solid;">
+</div>
+<div id="answer" style="border:1px black solid;">
+</div>
+</body>
+</html>

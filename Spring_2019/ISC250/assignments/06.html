@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 6A</title>
+		<link rel="stylesheet" type="text/css" href="../../../style.css">
+		<style>
+			img {
+				border-width:5px;
+				border-style:solid;
+				border-radius:10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Mine Sweeper 6A</h1>
+		<p>Assignment 6 is a start of an app which will eventually incorporate sound and graphics.</p>
+		<div>
+			<a href="main.png"><img src="MSSS.png"/></a>
+			<p> First, I copied and pasted the given code for the Mine Sweeper application,
+			then I replaced <b>android:columnCount="2"</b> to <b>android:columnCount="4"</b> in the <b>activity_main.xml</b> .</p>
+			<p>To represent the 4 columns needed in each row.</p>
+			<p>Then I went to: </p>
+			<p>
+			< TextView <br>
+            android:onClick="probe" <br>
+            android:background="@drawable/bg_tile" <br>
+            android:layout_width="0dp" <br>
+            android:layout_height="0dp" <br>
+            android:layout_columnWeight="1.0" <br>
+            android:layout_rowWeight="1.0" <br>
+            android:textAlignment="center" <br>
+            android:gravity="center" <br>
+            android:tag="1" <b><i>//I replaced a 0 to a 1 to show a boom instead of a dud. </i></b><br>
+            android:text="X" /> <br>
+        < TextView <br>
+            android:onClick="probe" <br>
+            android:background="@drawable/bg_tile" <br>
+            android:layout_width="0dp" <br>
+            android:layout_height="0dp" <br>
+            android:layout_columnWeight="1.0" <br>
+            android:layout_rowWeight="1.0" <br>
+            android:textAlignment="center" <br>
+            android:gravity="center" <br>
+            android:tag="0" <b><i>//The 0 in this line was there already.</i></b> <br>
+            android:text="X" /> <br>
+					</p>
+				<p>I copied the 0 one to amount to 16 to represent the 16 boxes needed.</p>
+				<p>From there I went to <b>bg_tile.xml</b> and replaced <b>< solid android:color="#ffffaa" /></b> with <b>< solid android:color="#aad5ff" /></b>
+				Which changed the color from a creme to a light blue.</p>
+				<p>This is what the app looks when the user pressed on the boxes: </p>
+				<a href="main.png"><img src="MSSS2.png"/></a>
+		</div>
+	</body>
+
+</html>

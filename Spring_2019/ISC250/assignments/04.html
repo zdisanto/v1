@@ -1,0 +1,110 @@
+
+<html>
+<head>
+<title>Timer Test V4</title>
+<h1>Web Worker</h1>
+<style>
+   body {
+      background: red;
+      font-family: sans-serif;
+      size: 14pt;
+   }
+   a {
+      text-decoration: none;
+      color: blue;
+   }
+</style>
+<script>
+   var w;
+
+   function handle(event) {
+      let val = 'NONE';
+      if (event.data.msg == 'quote') {
+         val = event.data.value;
+      } else {
+         val = "Bad message: " + event.data.msg;
+      }
+      document.getElementById("result")
+         .innerHTML = val;
+   }
+    function disableButtons(button_regex) {
+        var buttons = [...document.getElementsByTagName("button")];
+        if (buttons) {
+            buttons.forEach(
+                b => {
+                    if (b.innerHTML.match(button_regex))
+                        b.disabled = true;
+                    else
+                        b.disabled = false;
+                }
+            );
+        }
+    }
+   function startWorker() {
+      if(typeof(Worker) !== "undefined") {
+         if(typeof(w) == "undefined") {
+            createWorker();
+         }
+         disableButtons(/Start|Resume/);
+         w.postMessage({msg:"start"});
+      }
+   }
+   function pauseWorker() {
+      if(typeof(w) != "undefined") {
+         disableButtons(/Start|Pause|Stop/);
+         w.postMessage({msg:"pause"});
+      }
+   }
+   function resumeWorker() {
+      if(typeof(w) != "undefined") {
+         disableButtons(/Start|Resume/);
+         w.postMessage({msg:"resume"});
+      }
+   }
+   function stopWorker() {
+      if(typeof(w) !== "undefined") {
+         w.postMessage({msg:"stop"});
+         disableButtons(/Pause|Resume|Stop/);
+      }
+   }
+   function setQuantum(q) {
+      if(typeof(w) !== "undefined") {
+         w.postMessage({msg:"quantum", value: q});
+      }
+   }
+   function createWorker() {
+      if(typeof(Worker) !== "undefined") {
+         if(typeof(w) == "undefined") {
+            w = new Worker("worker.js");
+         }
+         w.onmessage = handle;
+         disableButtons(/Pause|Resume|Stop/);
+      } else {
+         document.getElementById("result")
+            .innerHTML = "Sorry! No Web Worker support.";
+      }
+   }
+window.onload = function() {
+   createWorker();
+}
+</script>
+</head>
+<body>
+<canvas id="canvas" class="content"></canvas>
+<div class="footer">
+
+<form action="javascript:void(0)">
+<button onclick="setQuantum(this.form.quantum.value)">Set quantum</button>
+<input type="text" name="quantum" value="250" size="5">
+</form>
+
+<p>Message: <output id="result"></output></p>
+<button onclick="startWorker()">Start Worker</button>
+<button onclick="pauseWorker()" disabled>Pause Worker</button>
+<button onclick="resumeWorker()" disabled>Resume Worker</button>
+<button onclick="stopWorker()" disabled>Stop Worker</button>
+
+</div>
+
+</body>
+</html>

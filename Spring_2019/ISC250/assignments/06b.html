@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 6B</title>
+		<link rel="stylesheet" type="text/css" href="../../../style.css">
+		<style>
+			img {
+				border-width:5px;
+				border-style:solid;
+				border-radius:10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Mine Sweeper 6B</h1>
+		<p>This version of the app introduces the concept of a custom View.</p>
+		<div>
+			<a href="main.png"><img src="MSbSS.png"/></a>
+			<p> First, I had to modify the <b>activity_main.xml</b> resource so that there are 16 "tiles"
+			programmatically make three of the tiles have "mines" by writing the setMines method.</p>
+			<p>Then I went to write the <b>isNeighbor</b> method, which contained:</p>
+			<p>private boolean isNeighbor(Tile s, Tile t) { <br>
+						if (s.row == t.row && (s.col == t.col - 1 || s.col == t.col + 1)) { <br>
+							return true; <br>
+						} <br>
+						else if (s.col == t.col && (s.row == t.row - 1 || s.row == t.row + 1)){ <br>
+							return true; <br>
+						} <br>
+						else if ((s.row == t.row + 1 || s.row == t.row - 1) && (s.col == t.col + 1 || s.col == t.col - 1) || <br>
+										 (s.col == t.col + 1 || s.col == t.col - 1) && (s.row == t.row + 1 || s.row == t.row - 1)) { <br>
+											return true; <br>
+										} else { <br>
+											return false; <br>
+										} <br>
+									} <br>
+
+			<p>I then added the correct line inside the if test in the <b>getNeighbors</b> method.</p>
+			<p>I had to change the <b>bg_tile</b> resource to give the tiles a different color than the one Professor Odendahl supplied.</p>
+				<a href="main.png"><img src="MSbSS2.png"/></a>
+			<p>I chose blue.</p>
+		</div>
+	</body>
+
+</html>

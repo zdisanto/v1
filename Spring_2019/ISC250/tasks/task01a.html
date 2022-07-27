@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task 01A - up to N</title>
+  </head>
+  <script type="text/javascript">
+     function oneNOrMoreFrom1(N) {
+        var accumulator = 0;
+        var i = 1;
+        while (accumulator < N) {
+           accumulator += i;
+           document.the_form.total.value = accumulator;
+           i++;
+        }
+        return i-1;
+     }
+  </script>
+  <body>
+<h2>How many natural numbers does it take to total N or more?</h2>
+<div style="border:2px solid green; background:#f5f5dc;">
+  <form name="the_form">
+Accumulated sum:
+  <input type="text" id="total" name="total" value="0" readonly size="20"/>
+<br>
+Last number used:
+  <input type="text" id="last" name="last" readonly size="10"/>
+<br>
+What is N?:
+  <input type="text" id="N" name="N" size="10"/>
+<br>
+<input type="button" value="Check" onclick="this.form.last.value = oneNOrMoreFrom1(this.form.N.value);"/>
+
+<input type="button" value="Tell me" onclick="this.form.last.value = oneNOrMoreFrom1();"/>
+<input type="reset" value="Reset Form">
+</form>
+</div>
+</body>
+</html>

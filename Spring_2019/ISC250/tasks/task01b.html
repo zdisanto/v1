@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task 01B - up to N</title>
+</head>
+	<script type="text/javascript">
+		function addToN(n, step){
+			var acc = 0;
+			var i = 1;
+			var step = 1 * step;
+			while(acc < n){
+				acc += i;
+				document.the_form.total.value = acc;
+				i = i + step;
+			}
+			return i -1;
+		}
+	</script>
+  <body>
+	<h1>Up to N with different incrementations.</h1>
+	<div style="border:2px dashed green;background:#f5f5dc;">
+  <form name="the_form">
+
+ N: <input type"text"
+	id="n"
+	name="n"
+	size="10"
+	value="1"
+	onFocus="if (value == this.defaultValue) value = ''"
+/>
+Step:
+   <input type="text"
+          id="step"
+          name="step"
+          value="0"
+          size="20"
+		  onFocus="if (value==this.defaultValue) value =''"
+   />
+
+Accumulated sum:
+   <input type="text"
+          id="total"
+          name="total"
+          value="0"
+          readonly
+          size="20"
+   />
+<br>
+Last number used:
+   <input type="text"
+          id="last"
+          name="last"
+          readonly
+          size="10"
+   />
+<br>
+<input type="button"
+       value="Tell me"
+       onclick="this.form.last.value = addToN(this.form.n.value, this.form.step.value);"
+   />
+<input type="reset" value="Reset Form"></td></tr>
+</form>
+</div>
+</body>
+</html>
